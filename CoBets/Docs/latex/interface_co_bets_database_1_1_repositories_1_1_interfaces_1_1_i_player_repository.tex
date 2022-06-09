@@ -1,0 +1,46 @@
+\hypertarget{interface_co_bets_database_1_1_repositories_1_1_interfaces_1_1_i_player_repository}{}\doxysection{Интерфейс Co\+Bets\+Database.\+Repositories.\+Interfaces.\+IPlayer\+Repository}
+\label{interface_co_bets_database_1_1_repositories_1_1_interfaces_1_1_i_player_repository}\index{CoBetsDatabase.Repositories.Interfaces.IPlayerRepository@{CoBetsDatabase.Repositories.Interfaces.IPlayerRepository}}
+
+
+Интерфейс репозитория игроков  
+
+
+Граф наследования\+:Co\+Bets\+Database.\+Repositories.\+Interfaces.\+IPlayer\+Repository\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{interface_co_bets_database_1_1_repositories_1_1_interfaces_1_1_i_player_repository}
+\end{center}
+\end{figure}
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+Task$<$ List$<$ \mbox{\hyperlink{class_co_bets_database_1_1_models_1_1_player}{Player}} $>$ $>$ \mbox{\hyperlink{interface_co_bets_database_1_1_repositories_1_1_interfaces_1_1_i_player_repository_aa9f1e7de11cf7ff181b8deee04fe83c4}{Get\+Players\+By\+Team}} (\mbox{\hyperlink{class_co_bets_database_1_1_models_1_1_team}{Team}} team)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Интерфейс репозитория игроков 
+
+См. определение в файле \mbox{\hyperlink{_i_player_repository_8cs_source}{IPlayer\+Repository.\+cs}} строка \mbox{\hyperlink{_i_player_repository_8cs_source_l00010}{10}}
+
+
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{interface_co_bets_database_1_1_repositories_1_1_interfaces_1_1_i_player_repository_aa9f1e7de11cf7ff181b8deee04fe83c4}\label{interface_co_bets_database_1_1_repositories_1_1_interfaces_1_1_i_player_repository_aa9f1e7de11cf7ff181b8deee04fe83c4}} 
+\index{CoBetsDatabase.Repositories.Interfaces.IPlayerRepository@{CoBetsDatabase.Repositories.Interfaces.IPlayerRepository}!GetPlayersByTeam@{GetPlayersByTeam}}
+\index{GetPlayersByTeam@{GetPlayersByTeam}!CoBetsDatabase.Repositories.Interfaces.IPlayerRepository@{CoBetsDatabase.Repositories.Interfaces.IPlayerRepository}}
+\doxysubsubsection{\texorpdfstring{GetPlayersByTeam()}{GetPlayersByTeam()}}
+{\footnotesize\ttfamily Task$<$ List$<$ \mbox{\hyperlink{class_co_bets_database_1_1_models_1_1_player}{Player}} $>$ $>$ Co\+Bets\+Database.\+Repositories.\+Interfaces.\+IPlayer\+Repository.\+Get\+Players\+By\+Team (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_co_bets_database_1_1_models_1_1_team}{Team}}}]{team }\end{DoxyParamCaption})}
+
+Получение информации об игроке по его команде \begin{DoxyReturn}{Возвращает}
+Экземпляр игрока -- при успехе, null -- иначе 
+\end{DoxyReturn}
+
+
+Замещается в \mbox{\hyperlink{class_co_bets_database_1_1_repositories_1_1_implementation_1_1_player_repository_a48c7b7661d91cebb66361a03405a9fb9}{Co\+Bets\+Database.\+Repositories.\+Implementation.\+Player\+Repository}}.
+
+
+
+Объявления и описания членов интерфейса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+Co\+Bets\+Database/\+Repositories/\+Interfaces/\mbox{\hyperlink{_i_player_repository_8cs}{IPlayer\+Repository.\+cs}}\end{DoxyCompactItemize}

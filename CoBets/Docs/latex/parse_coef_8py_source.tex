@@ -1,0 +1,112 @@
+\hypertarget{parse_coef_8py_source}{}\doxysection{parse\+Coef.\+py}
+\label{parse_coef_8py_source}\index{Parsers/CoefsParser/parseCoef.py@{Parsers/CoefsParser/parseCoef.py}}
+\mbox{\hyperlink{parse_coef_8py}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00001}\mbox{\hyperlink{namespaceparse_coef}{00001}} \textcolor{keyword}{import} urllib.request}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00002}00002 \textcolor{keyword}{import} json}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00004}\mbox{\hyperlink{namespaceparse_coef_a01a3d619fec75902b75e568044becb74}{00004}} FILENAME\_KEY = \textcolor{stringliteral}{'api.key'}}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00005}\mbox{\hyperlink{namespaceparse_coef_a964211c81868a5cff303b49821cca1f9}{00005}} FILENAME\_COEFS = \textcolor{stringliteral}{'coefs.csv'}}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00007}\mbox{\hyperlink{namespaceparse_coef_aa389e6667f14360dc61ce4621d5f9324}{00007}} BASE\_URL = \textcolor{stringliteral}{'https://api.the-\/odds-\/api.com/v4/sports/'}}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00008}\mbox{\hyperlink{namespaceparse_coef_a0c5fa3c812b44295857444edd9c58445}{00008}} SPORT = \textcolor{stringliteral}{'soccer\_uefa\_champs\_league/'}}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00009}\mbox{\hyperlink{namespaceparse_coef_aad8a0d0dcb6aeb6b5ab860600dfcc330}{00009}} SERVICE\_NAME = \textcolor{stringliteral}{'odds/'}}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00010}\mbox{\hyperlink{namespaceparse_coef_aaf36b688f610516969f58ae5b0c5ce0c}{00010}} KEY\_FORMAT = \textcolor{stringliteral}{'?apiKey='}}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00011}\mbox{\hyperlink{namespaceparse_coef_a3cec4b01116f85c9d36ec2f6d2567c32}{00011}} REGIONS = \textcolor{stringliteral}{'\&regions=eu'}}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00012}\mbox{\hyperlink{namespaceparse_coef_ae14777ae39a5630aaad65bf77ee6af5d}{00012}} MARKETS = \textcolor{stringliteral}{'\&markets=h2h'}}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00015}00015 \textcolor{comment}{\#Формирование запроса и получение json-\/данных}}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00016}\mbox{\hyperlink{namespaceparse_coef_aeb96e7f5b68b98de335ec0ea75810731}{00016}} \textcolor{keyword}{def }\mbox{\hyperlink{namespaceparse_coef_aeb96e7f5b68b98de335ec0ea75810731}{get\_api\_key}}(filename):}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00017}00017     f = open(filename, \textcolor{stringliteral}{'r'})}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00018}00018     key = f.readline().strip()}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00019}00019     f.close()}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00021}00021     \textcolor{keywordflow}{return} key}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00023}\mbox{\hyperlink{namespaceparse_coef_acd4fd9e1e415fd5f4099c6c9972be5a6}{00023}} \textcolor{keyword}{def }\mbox{\hyperlink{namespaceparse_coef_acd4fd9e1e415fd5f4099c6c9972be5a6}{form\_url}}():}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00024}00024     url = BASE\_URL + SPORT + SERVICE\_NAME}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00025}00025     url = url + KEY\_FORMAT + \mbox{\hyperlink{namespaceparse_coef_aeb96e7f5b68b98de335ec0ea75810731}{get\_api\_key}}(FILENAME\_KEY)}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00026}00026     url = url + REGIONS + MARKETS}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00027}00027     }
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00028}00028     \textcolor{keywordflow}{return} url}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00030}\mbox{\hyperlink{namespaceparse_coef_a76ef7b7baa6aa9c5cbd1cf3ae28705b9}{00030}} \textcolor{keyword}{def }\mbox{\hyperlink{namespaceparse_coef_a76ef7b7baa6aa9c5cbd1cf3ae28705b9}{get\_json\_data}}():}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00031}00031     url = \mbox{\hyperlink{namespaceparse_coef_acd4fd9e1e415fd5f4099c6c9972be5a6}{form\_url}}()}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00032}00032     response = urllib.request.urlopen(url).read().decode()}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00033}00033     json\_data = json.loads(response)}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00034}00034     }
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00035}00035     \textcolor{keywordflow}{return} json\_data}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00038}00038 \textcolor{comment}{\#Обработка json и выбор лучших коэффициентов}}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00039}\mbox{\hyperlink{namespaceparse_coef_a58314c9326c9df212547460d88bf927b}{00039}} \textcolor{keyword}{def }\mbox{\hyperlink{namespaceparse_coef_a58314c9326c9df212547460d88bf927b}{get\_bookmakers\_data}}(team\_home, bookmakers):}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00040}00040     books\_data = []}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00041}00041     \textcolor{keywordflow}{for} bookmaker \textcolor{keywordflow}{in} bookmakers:}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00042}00042         name = bookmaker[\textcolor{stringliteral}{'title'}]}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00043}00043         coef1 = bookmaker[\textcolor{stringliteral}{'markets'}][0][\textcolor{stringliteral}{'outcomes'}][0][\textcolor{stringliteral}{'price'}]}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00044}00044         coef2 = bookmaker[\textcolor{stringliteral}{'markets'}][0][\textcolor{stringliteral}{'outcomes'}][1][\textcolor{stringliteral}{'price'}]}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00045}00045         }
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00046}00046         \textcolor{keywordflow}{if} (team\_home != bookmaker[\textcolor{stringliteral}{'markets'}][0][\textcolor{stringliteral}{'outcomes'}][0][\textcolor{stringliteral}{'name'}]):}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00047}00047             coef1, coef2 = coef2, coef1}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00048}00048         books\_data.append((name, coef1, coef2))}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00050}00050     \textcolor{keywordflow}{return} books\_data}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00052}\mbox{\hyperlink{namespaceparse_coef_a36d4f1e8e696b610c48fbd72fca36e4e}{00052}} \textcolor{keyword}{def }\mbox{\hyperlink{namespaceparse_coef_a36d4f1e8e696b610c48fbd72fca36e4e}{get\_best\_book\_pair}}(books):}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00053}00053     books.sort(key=\textcolor{keyword}{lambda} coef: coef[1], reverse=\textcolor{keyword}{True})}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00054}00054     book1 = books[0][0], books[0][1]}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00056}00056     books.sort(key=\textcolor{keyword}{lambda} coef: coef[2], reverse=\textcolor{keyword}{True})}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00057}00057     book2 = books[0][0], books[0][2]}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00059}00059     \textcolor{keywordflow}{return} book1, book2}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00061}\mbox{\hyperlink{namespaceparse_coef_ac40025df3f3387ba0838ea4bc1e6300a}{00061}} \textcolor{keyword}{def }\mbox{\hyperlink{namespaceparse_coef_ac40025df3f3387ba0838ea4bc1e6300a}{get\_data\_coefs}}():}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00062}00062     games\_full\_data = \mbox{\hyperlink{namespaceparse_coef_a76ef7b7baa6aa9c5cbd1cf3ae28705b9}{get\_json\_data}}()}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00063}00063     num\_games = sum([1 \textcolor{keywordflow}{for} game \textcolor{keywordflow}{in} games\_full\_data])}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00064}00064     }
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00065}00065     data = []}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00066}00066     \textcolor{keywordflow}{for} i \textcolor{keywordflow}{in} range(num\_games):}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00067}00067         time = games\_full\_data[i][\textcolor{stringliteral}{'commence\_time'}]}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00068}00068         team1 = games\_full\_data[i][\textcolor{stringliteral}{'home\_team'}]}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00069}00069         team2 = games\_full\_data[i][\textcolor{stringliteral}{'away\_team'}]}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00070}00070         }
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00071}00071         bookmakers = games\_full\_data[i][\textcolor{stringliteral}{'bookmakers'}]}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00072}00072         bookmakers\_data = \mbox{\hyperlink{namespaceparse_coef_a58314c9326c9df212547460d88bf927b}{get\_bookmakers\_data}}(team1, bookmakers)}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00074}00074         book1, book2 = \mbox{\hyperlink{namespaceparse_coef_a36d4f1e8e696b610c48fbd72fca36e4e}{get\_best\_book\_pair}}(bookmakers\_data)}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00075}00075         data.append((time, team1, team2, (book1, book2)))}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00076}00076 }
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00077}00077     \textcolor{keywordflow}{return} data}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00079}00079 }
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00080}\mbox{\hyperlink{namespaceparse_coef_aad6bc9c71bbc2fddfc8d195a5d69e251}{00080}} \textcolor{keyword}{def }\mbox{\hyperlink{namespaceparse_coef_aad6bc9c71bbc2fddfc8d195a5d69e251}{write\_data\_in\_file}}(data, filename):}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00081}00081     f = open(filename, \textcolor{stringliteral}{"{}w"{}})}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00082}00082 }
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00083}00083     \textcolor{keywordflow}{for} game \textcolor{keywordflow}{in} data: }
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00084}00084         team1 = game[0] }
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00085}00085         team2 = game[1]}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00086}00086         }
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00087}00087         book1 = game[2] }
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00088}00088         book2 = game[3]}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00089}00089 }
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00090}00090         game\_str = str(team1) + \textcolor{stringliteral}{','} + str(team2) + \textcolor{stringliteral}{','} +\(\backslash\)}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00091}00091                    str(book1) + \textcolor{stringliteral}{','} + str(book2) + \textcolor{stringliteral}{'\(\backslash\)n'}}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00092}00092         game\_str = game\_str.replace(\textcolor{stringliteral}{"{}("{}}, \textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00093}00093         game\_str = game\_str.replace(\textcolor{stringliteral}{"{})"{}}, \textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00094}00094 }
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00095}00095         f.write(game\_str)}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00096}00096 }
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00097}00097     f.close()}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00098}00098 }
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00099}00099 }
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00100}\mbox{\hyperlink{namespaceparse_coef_a91376a4f0e2e9f1cf8b1817e80875019}{00100}} \textcolor{keyword}{def }\mbox{\hyperlink{namespaceparse_coef_a91376a4f0e2e9f1cf8b1817e80875019}{main}}():}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00101}00101     data\_coefs = \mbox{\hyperlink{namespaceparse_coef_ac40025df3f3387ba0838ea4bc1e6300a}{get\_data\_coefs}}()}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00102}00102     \mbox{\hyperlink{namespaceparse_coef_aad6bc9c71bbc2fddfc8d195a5d69e251}{write\_data\_in\_file}}(data\_coefs, FILENAME\_COEFS)}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00103}00103     print(\textcolor{stringliteral}{'Data was written to the file!'})}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00104}00104 }
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00105}00105 \textcolor{keywordflow}{if} \_\_name\_\_ == \textcolor{stringliteral}{"{}\_\_main\_\_"{}}:}
+\DoxyCodeLine{\Hypertarget{parse_coef_8py_source_l00106}00106     \mbox{\hyperlink{namespaceparse_coef_a91376a4f0e2e9f1cf8b1817e80875019}{main}}()}
+
+\end{DoxyCode}

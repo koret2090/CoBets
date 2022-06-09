@@ -1,0 +1,104 @@
+\hypertarget{_program_8cs_source}{}\doxysection{Program.\+cs}
+\label{_program_8cs_source}\index{TelegramBot/Program.cs@{TelegramBot/Program.cs}}
+\mbox{\hyperlink{_program_8cs}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00001}00001 \textcolor{keyword}{using} System;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00002}00002 \textcolor{keyword}{using} System.IO;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00003}00003 \textcolor{keyword}{using} \mbox{\hyperlink{namespace_co_bets_database}{CoBetsDatabase}};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00004}00004 \textcolor{keyword}{using} \mbox{\hyperlink{namespace_co_bets_database}{CoBetsDatabase}}.\mbox{\hyperlink{namespace_co_bets_database_1_1_repositories}{Repositories}}.\mbox{\hyperlink{namespace_co_bets_database_1_1_repositories_1_1_implementation}{Implementation}};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00005}00005 \textcolor{keyword}{using} \mbox{\hyperlink{namespace_co_bets_database}{CoBetsDatabase}}.\mbox{\hyperlink{namespace_co_bets_database_1_1_repositories}{Repositories}}.\mbox{\hyperlink{namespace_co_bets_database_1_1_repositories_1_1_interfaces}{Interfaces}};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00006}00006 \textcolor{keyword}{using} \mbox{\hyperlink{namespace_controllers}{Controllers}};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00007}00007 \textcolor{keyword}{using} Microsoft.EntityFrameworkCore;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00008}00008 \textcolor{keyword}{using} Serilog;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00009}00009 \textcolor{keyword}{using} Serilog.Core;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00010}00010 \textcolor{keyword}{using} Microsoft.Extensions.Configuration;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00011}00011 \textcolor{keyword}{using} Microsoft.Extensions.DependencyInjection;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00012}00012 \textcolor{keyword}{using} Microsoft.Extensions.Hosting;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00013}00013 \textcolor{keyword}{using} Microsoft.Extensions.Logging;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00015}00015 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_telegram_bot}{TelegramBot}}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00016}00016 \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00017}00017     \textcolor{keyword}{static} \textcolor{keyword}{class }Program}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00018}00018     \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00019}00019         \textcolor{keyword}{private} \textcolor{keyword}{const} \textcolor{keywordtype}{string} AppSettings = \textcolor{stringliteral}{"{}appsettings.json"{}};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00020}00020         }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00021}00021         \textcolor{keyword}{static} \textcolor{keywordtype}{void} Main(\textcolor{keywordtype}{string}[] args)}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00022}00022         \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00023}00023             var logger = SetupLogger();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00024}00024             Log.Logger = logger;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00025}00025             }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00026}00026             \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00027}00027             \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00028}00028                 CreateHostBuilder(args).Build().Run();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00029}00029             \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00030}00030             \textcolor{keywordflow}{catch} (Exception e)}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00031}00031             \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00032}00032                 logger.Error(e, \textcolor{stringliteral}{"{}Bot was stopped due to exception!"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00033}00033                 \textcolor{keywordflow}{throw};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00034}00034             \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00035}00035             \textcolor{keywordflow}{finally}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00036}00036             \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00037}00037                 logger.Dispose();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00038}00038             \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00039}00039         \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00041}00041         \textcolor{keyword}{private} \textcolor{keyword}{static} IHostBuilder CreateHostBuilder(\textcolor{keywordtype}{string}[] args)}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00042}00042         \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00043}00043             var config = \textcolor{keyword}{new} ConfigurationBuilder()}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00044}00044                 .SetBasePath(Directory.GetCurrentDirectory())}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00045}00045                 .AddJsonFile(AppSettings)}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00046}00046                 .Build();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00047}00047             }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00048}00048             var token = config.GetSection(\textcolor{stringliteral}{"{}Token"{}}).Value;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00049}00049             var connectionString = config.GetSection(\textcolor{stringliteral}{"{}DefaultConnection"{}}).Value;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00050}00050             }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00051}00051             var host = Host.CreateDefaultBuilder(args)}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00052}00052                 .ConfigureServices((hostContext, services) =>}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00053}00053                 \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00054}00054                     services.AddDbContext<\mbox{\hyperlink{class_co_bets_database_1_1_co_bets_db_context}{CoBetsDbContext}}>(option =>}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00055}00055                         option.UseNpgsql(connectionString));}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00056}00056                     services.AddSingleton(provider => token);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00057}00057                     }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00058}00058                     services.AddScoped<\mbox{\hyperlink{interface_co_bets_database_1_1_repositories_1_1_interfaces_1_1_i_team_repository}{ITeamRepository}}, \mbox{\hyperlink{class_co_bets_database_1_1_repositories_1_1_implementation_1_1_team_repository}{TeamRepository}}>();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00059}00059                     services.AddScoped<\mbox{\hyperlink{interface_co_bets_database_1_1_repositories_1_1_interfaces_1_1_i_player_repository}{IPlayerRepository}}, \mbox{\hyperlink{class_co_bets_database_1_1_repositories_1_1_implementation_1_1_player_repository}{PlayerRepository}}>();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00060}00060                     services.AddTransient<\mbox{\hyperlink{class_controllers_1_1_team_controller}{TeamController}}>();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00061}00061                     services.AddTransient<\mbox{\hyperlink{class_controllers_1_1_player_controller}{PlayerController}}>();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00062}00062                     }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00063}00063                     services.AddSingleton<DatabaseManager>();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00064}00064                     services.AddSingleton<BotMessages>();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00065}00065                     services.AddSingleton<BotMenu>();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00066}00066                     services.AddSingleton<Handlers>();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00067}00067                     }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00068}00068                     services.AddHostedService<Bot>();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00069}00069                 \})}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00070}00070                 .ConfigureLogging(logging =>}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00071}00071                 \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00072}00072                     logging.ClearProviders();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00073}00073                     logging.SetMinimumLevel(LogLevel.Trace);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00074}00074                 \})}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00075}00075                 .UseSerilog();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00076}00076             }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00077}00077             }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00079}00079             \textcolor{keywordflow}{return} host;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00080}00080         \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00081}00081 }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00082}00082         \textcolor{keyword}{private} \textcolor{keyword}{static} Logger SetupLogger()}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00083}00083         \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00084}00084             Serilog.Debugging.SelfLog.Enable(Console.WriteLine);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00085}00085 }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00086}00086             var configuration = \textcolor{keyword}{new} ConfigurationBuilder()}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00087}00087                 .SetBasePath(Directory.GetCurrentDirectory())}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00088}00088                 .AddJsonFile(AppSettings)}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00089}00089                 .Build();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00091}00091             var lConfig = \textcolor{keyword}{new} LoggerConfiguration();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00092}00092             lConfig = lConfig.ReadFrom.Configuration(configuration);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00093}00093             var logger = lConfig.CreateLogger();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00094}00094 }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00095}00095             \textcolor{keywordflow}{return} logger;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00096}00096         \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00097}00097     \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00098}00098 \}}
+
+\end{DoxyCode}

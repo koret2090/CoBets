@@ -1,0 +1,107 @@
+\hypertarget{20220331172606___init_8_designer_8cs_source}{}\doxysection{20220331172606\+\_\+\+Init.\+Designer.\+cs}
+\label{20220331172606___init_8_designer_8cs_source}\index{TelegramBot/Migrations/20220331172606\_Init.Designer.cs@{TelegramBot/Migrations/20220331172606\_Init.Designer.cs}}
+\mbox{\hyperlink{20220331172606___init_8_designer_8cs}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00001}00001 \textcolor{comment}{// <auto-\/generated />}}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00002}00002 \textcolor{keyword}{using} \mbox{\hyperlink{namespace_co_bets_database}{CoBetsDatabase}};}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00003}00003 \textcolor{keyword}{using} Microsoft.EntityFrameworkCore;}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00004}00004 \textcolor{keyword}{using} Microsoft.EntityFrameworkCore.Infrastructure;}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00005}00005 \textcolor{keyword}{using} Microsoft.EntityFrameworkCore.Migrations;}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00006}00006 \textcolor{keyword}{using} Microsoft.EntityFrameworkCore.Storage.ValueConversion;}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00007}00007 \textcolor{keyword}{using} Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00009}00009 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_telegram_bot_1_1_migrations}{TelegramBot.Migrations}}}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00010}00010 \{}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00011}00011     [DbContext(typeof(\mbox{\hyperlink{class_co_bets_database_1_1_co_bets_db_context}{CoBetsDbContext}}))]}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00012}00012     [Migration(\textcolor{stringliteral}{"{}20220331172606\_Init"{}})]}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00013}00013     \textcolor{keyword}{partial class }Init}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00014}00014     \{}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00015}\mbox{\hyperlink{class_telegram_bot_1_1_migrations_1_1_init_a976ed9cbc7787f1f4bdb01f83b781030}{00015}}         \textcolor{keyword}{protected} \textcolor{keyword}{override} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_telegram_bot_1_1_migrations_1_1_init_a976ed9cbc7787f1f4bdb01f83b781030}{BuildTargetModel}}(ModelBuilder modelBuilder)}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00016}00016         \{}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00017}00017 \textcolor{preprocessor}{\#pragma warning disable 612, 618}}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00018}00018             modelBuilder}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00019}00019                 .HasAnnotation(\textcolor{stringliteral}{"{}Relational:MaxIdentifierLength"{}}, 63)}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00020}00020                 .HasAnnotation(\textcolor{stringliteral}{"{}ProductVersion"{}}, \textcolor{stringliteral}{"{}5.0.15"{}})}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00021}00021                 .HasAnnotation(\textcolor{stringliteral}{"{}Npgsql:ValueGenerationStrategy"{}}, NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00023}00023             modelBuilder.Entity(\textcolor{stringliteral}{"{}CoBetsDatabase.Models.Player"{}}, b =>}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00024}00024                 \{}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00025}00025                     b.Property<\textcolor{keywordtype}{int}>(\textcolor{stringliteral}{"{}Id"{}})}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00026}00026                         .ValueGeneratedOnAdd()}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00027}00027                         .HasColumnType(\textcolor{stringliteral}{"{}integer"{}})}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00028}00028                         .HasAnnotation(\textcolor{stringliteral}{"{}Npgsql:ValueGenerationStrategy"{}}, NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00030}00030                     b.Property<\textcolor{keywordtype}{int}>(\textcolor{stringliteral}{"{}Age"{}})}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00031}00031                         .HasColumnType(\textcolor{stringliteral}{"{}integer"{}});}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00033}00033                     b.Property<\textcolor{keywordtype}{string}>(\textcolor{stringliteral}{"{}Name"{}})}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00034}00034                         .IsRequired()}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00035}00035                         .HasColumnType(\textcolor{stringliteral}{"{}text"{}});}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00037}00037                     b.Property<\textcolor{keywordtype}{int}>(\textcolor{stringliteral}{"{}Position"{}})}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00038}00038                         .HasColumnType(\textcolor{stringliteral}{"{}integer"{}});}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00040}00040                     b.Property<\textcolor{keywordtype}{int}>(\textcolor{stringliteral}{"{}TeamId"{}})}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00041}00041                         .HasColumnType(\textcolor{stringliteral}{"{}integer"{}});}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00043}00043                     b.HasKey(\textcolor{stringliteral}{"{}Id"{}});}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00045}00045                     b.HasIndex(\textcolor{stringliteral}{"{}TeamId"{}});}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00047}00047                     b.ToTable(\textcolor{stringliteral}{"{}players"{}});}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00049}00049                     b.HasData(}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00050}00050                         \textcolor{keyword}{new}}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00051}00051                         \{}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00052}00052                             Id = 1,}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00053}00053                             Age = 20,}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00054}00054                             Name = \textcolor{stringliteral}{"{}Aboba"{}},}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00055}00055                             Position = 3,}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00056}00056                             TeamId = 1}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00057}00057                         \});}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00058}00058                 \});}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00060}00060             modelBuilder.Entity(\textcolor{stringliteral}{"{}CoBetsDatabase.Models.Team"{}}, b =>}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00061}00061                 \{}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00062}00062                     b.Property<\textcolor{keywordtype}{int}>(\textcolor{stringliteral}{"{}Id"{}})}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00063}00063                         .ValueGeneratedOnAdd()}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00064}00064                         .HasColumnType(\textcolor{stringliteral}{"{}integer"{}})}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00065}00065                         .HasAnnotation(\textcolor{stringliteral}{"{}Npgsql:ValueGenerationStrategy"{}}, NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00067}00067                     b.Property<\textcolor{keywordtype}{string}>(\textcolor{stringliteral}{"{}Name"{}})}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00068}00068                         .IsRequired()}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00069}00069                         .HasColumnType(\textcolor{stringliteral}{"{}text"{}});}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00071}00071                     b.HasKey(\textcolor{stringliteral}{"{}Id"{}});}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00072}00072 }
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00073}00073                     b.ToTable(\textcolor{stringliteral}{"{}team"{}});}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00074}00074 }
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00075}00075                     b.HasData(}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00076}00076                         \textcolor{keyword}{new}}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00077}00077                         \{}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00078}00078                             Id = 1,}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00079}00079                             Name = \textcolor{stringliteral}{"{}Aboba Team"{}}}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00080}00080                         \});}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00081}00081                 \});}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00082}00082 }
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00083}00083             modelBuilder.Entity(\textcolor{stringliteral}{"{}CoBetsDatabase.Models.Player"{}}, b =>}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00084}00084                 \{}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00085}00085                     b.HasOne(\textcolor{stringliteral}{"{}CoBetsDatabase.Models.Team"{}}, \textcolor{stringliteral}{"{}Team"{}})}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00086}00086                         .WithMany(\textcolor{stringliteral}{"{}Players"{}})}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00087}00087                         .HasForeignKey(\textcolor{stringliteral}{"{}TeamId"{}})}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00088}00088                         .OnDelete(DeleteBehavior.Cascade)}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00089}00089                         .IsRequired();}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00091}00091                     b.Navigation(\textcolor{stringliteral}{"{}Team"{}});}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00092}00092                 \});}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00093}00093 }
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00094}00094             modelBuilder.Entity(\textcolor{stringliteral}{"{}CoBetsDatabase.Models.Team"{}}, b =>}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00095}00095                 \{}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00096}00096                     b.Navigation(\textcolor{stringliteral}{"{}Players"{}});}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00097}00097                 \});}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00098}00098 \textcolor{preprocessor}{\#pragma warning restore 612, 618}}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00099}00099         \}}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00100}00100     \}}
+\DoxyCodeLine{\Hypertarget{20220331172606___init_8_designer_8cs_source_l00101}00101 \}}
+
+\end{DoxyCode}

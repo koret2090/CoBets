@@ -1,0 +1,136 @@
+\hypertarget{class_controllers_1_1_team_controller}{}\doxysection{Класс Controllers.\+Team\+Controller}
+\label{class_controllers_1_1_team_controller}\index{Controllers.TeamController@{Controllers.TeamController}}
+
+
+Контроллер команд  
+
+
+Граф наследования\+:Controllers.\+Team\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_controllers_1_1_team_controller}
+\end{center}
+\end{figure}
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_controllers_1_1_team_controller_a5fa24e6bcc915a1ee7f87eec831fbcb8}{Team\+Controller}} (\mbox{\hyperlink{interface_co_bets_database_1_1_repositories_1_1_interfaces_1_1_i_team_repository}{ITeam\+Repository}} team\+Repository)
+\item 
+Task$<$ \mbox{\hyperlink{class_co_bets_database_1_1_models_1_1_team}{Team}}?$>$ \mbox{\hyperlink{class_controllers_1_1_team_controller_aaa28dbc2e8a3013a1ba2cda01cc05ac6}{Add}} (\mbox{\hyperlink{class_co_bets_database_1_1_models_1_1_team}{Team}} element)
+\item 
+Task$<$ List$<$ \mbox{\hyperlink{class_co_bets_database_1_1_models_1_1_team}{Team}} $>$ $>$ \mbox{\hyperlink{class_controllers_1_1_team_controller_a9e684a01e16e4b24f762b8dc0abf24db}{Get\+All}} ()
+\item 
+Task$<$ bool $>$ \mbox{\hyperlink{class_controllers_1_1_team_controller_aff45482c76e303d357253799cca62aac}{Delete}} (int id)
+\item 
+Task$<$ \mbox{\hyperlink{class_co_bets_database_1_1_models_1_1_team}{Team}}?$>$ \mbox{\hyperlink{class_controllers_1_1_team_controller_ab1eb55447b96c490a28269cd16a122a8}{Find\+Element\+By\+Id}} (int id)
+\item 
+Task$<$ \mbox{\hyperlink{class_co_bets_database_1_1_models_1_1_team}{Team}}?$>$ \mbox{\hyperlink{class_controllers_1_1_team_controller_a502d82be70807c30930ee4b0a0e49ef1}{Find\+Element\+By\+Name}} (string name)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Контроллер команд 
+
+См. определение в файле \mbox{\hyperlink{_team_controller_8cs_source}{Team\+Controller.\+cs}} строка \mbox{\hyperlink{_team_controller_8cs_source_l00011}{11}}
+
+
+
+\doxysubsection{Конструктор(ы)}
+\mbox{\Hypertarget{class_controllers_1_1_team_controller_a5fa24e6bcc915a1ee7f87eec831fbcb8}\label{class_controllers_1_1_team_controller_a5fa24e6bcc915a1ee7f87eec831fbcb8}} 
+\index{Controllers.TeamController@{Controllers.TeamController}!TeamController@{TeamController}}
+\index{TeamController@{TeamController}!Controllers.TeamController@{Controllers.TeamController}}
+\doxysubsubsection{\texorpdfstring{TeamController()}{TeamController()}}
+{\footnotesize\ttfamily Controllers.\+Team\+Controller.\+Team\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_co_bets_database_1_1_repositories_1_1_interfaces_1_1_i_team_repository}{ITeam\+Repository}}}]{team\+Repository }\end{DoxyParamCaption})}
+
+Конструктор 
+\begin{DoxyParams}{Аргументы}
+{\em database} & Репозиторий команды \\
+\hline
+\end{DoxyParams}
+
+
+См. определение в файле \mbox{\hyperlink{_team_controller_8cs_source}{Team\+Controller.\+cs}} строка \mbox{\hyperlink{_team_controller_8cs_source_l00022}{22}}
+
+
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{class_controllers_1_1_team_controller_aaa28dbc2e8a3013a1ba2cda01cc05ac6}\label{class_controllers_1_1_team_controller_aaa28dbc2e8a3013a1ba2cda01cc05ac6}} 
+\index{Controllers.TeamController@{Controllers.TeamController}!Add@{Add}}
+\index{Add@{Add}!Controllers.TeamController@{Controllers.TeamController}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}}
+{\footnotesize\ttfamily Task$<$ \mbox{\hyperlink{class_co_bets_database_1_1_models_1_1_team}{Team}}?$>$ Controllers.\+Team\+Controller.\+Add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_co_bets_database_1_1_models_1_1_team}{Team}}}]{element }\end{DoxyParamCaption})}
+
+Добавление команды в базу данных 
+\begin{DoxyParams}{Аргументы}
+{\em element} & Экземпляр команды \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Экземпляр, добавленной команды -- при успехе, null -- при неудаче 
+\end{DoxyReturn}
+
+
+См. определение в файле \mbox{\hyperlink{_team_controller_8cs_source}{Team\+Controller.\+cs}} строка \mbox{\hyperlink{_team_controller_8cs_source_l00033}{33}}
+
+\mbox{\Hypertarget{class_controllers_1_1_team_controller_aff45482c76e303d357253799cca62aac}\label{class_controllers_1_1_team_controller_aff45482c76e303d357253799cca62aac}} 
+\index{Controllers.TeamController@{Controllers.TeamController}!Delete@{Delete}}
+\index{Delete@{Delete}!Controllers.TeamController@{Controllers.TeamController}}
+\doxysubsubsection{\texorpdfstring{Delete()}{Delete()}}
+{\footnotesize\ttfamily Task$<$ bool $>$ Controllers.\+Team\+Controller.\+Delete (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+Удаление команды из базы данных 
+\begin{DoxyParams}{Аргументы}
+{\em id} & Идентификатор команды \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true -- при успешном завершении операции, false -- иначе 
+\end{DoxyReturn}
+
+
+См. определение в файле \mbox{\hyperlink{_team_controller_8cs_source}{Team\+Controller.\+cs}} строка \mbox{\hyperlink{_team_controller_8cs_source_l00053}{53}}
+
+\mbox{\Hypertarget{class_controllers_1_1_team_controller_ab1eb55447b96c490a28269cd16a122a8}\label{class_controllers_1_1_team_controller_ab1eb55447b96c490a28269cd16a122a8}} 
+\index{Controllers.TeamController@{Controllers.TeamController}!FindElementById@{FindElementById}}
+\index{FindElementById@{FindElementById}!Controllers.TeamController@{Controllers.TeamController}}
+\doxysubsubsection{\texorpdfstring{FindElementById()}{FindElementById()}}
+{\footnotesize\ttfamily Task$<$ \mbox{\hyperlink{class_co_bets_database_1_1_models_1_1_team}{Team}}?$>$ Controllers.\+Team\+Controller.\+Find\+Element\+By\+Id (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+Получение информации о команде по ее id \begin{DoxyReturn}{Возвращает}
+Экземпляр команды -- при успехе, null -- иначе 
+\end{DoxyReturn}
+
+
+См. определение в файле \mbox{\hyperlink{_team_controller_8cs_source}{Team\+Controller.\+cs}} строка \mbox{\hyperlink{_team_controller_8cs_source_l00062}{62}}
+
+\mbox{\Hypertarget{class_controllers_1_1_team_controller_a502d82be70807c30930ee4b0a0e49ef1}\label{class_controllers_1_1_team_controller_a502d82be70807c30930ee4b0a0e49ef1}} 
+\index{Controllers.TeamController@{Controllers.TeamController}!FindElementByName@{FindElementByName}}
+\index{FindElementByName@{FindElementByName}!Controllers.TeamController@{Controllers.TeamController}}
+\doxysubsubsection{\texorpdfstring{FindElementByName()}{FindElementByName()}}
+{\footnotesize\ttfamily Task$<$ \mbox{\hyperlink{class_co_bets_database_1_1_models_1_1_team}{Team}}?$>$ Controllers.\+Team\+Controller.\+Find\+Element\+By\+Name (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})}
+
+Получение информации о команде по ее названию \begin{DoxyReturn}{Возвращает}
+Экземпляр команды -- при успехе, null -- иначе 
+\end{DoxyReturn}
+
+
+См. определение в файле \mbox{\hyperlink{_team_controller_8cs_source}{Team\+Controller.\+cs}} строка \mbox{\hyperlink{_team_controller_8cs_source_l00071}{71}}
+
+\mbox{\Hypertarget{class_controllers_1_1_team_controller_a9e684a01e16e4b24f762b8dc0abf24db}\label{class_controllers_1_1_team_controller_a9e684a01e16e4b24f762b8dc0abf24db}} 
+\index{Controllers.TeamController@{Controllers.TeamController}!GetAll@{GetAll}}
+\index{GetAll@{GetAll}!Controllers.TeamController@{Controllers.TeamController}}
+\doxysubsubsection{\texorpdfstring{GetAll()}{GetAll()}}
+{\footnotesize\ttfamily Task$<$ List$<$ \mbox{\hyperlink{class_co_bets_database_1_1_models_1_1_team}{Team}} $>$ $>$ Controllers.\+Team\+Controller.\+Get\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Получение информации о всех командах базы данных \begin{DoxyReturn}{Возвращает}
+Список команд 
+\end{DoxyReturn}
+
+
+См. определение в файле \mbox{\hyperlink{_team_controller_8cs_source}{Team\+Controller.\+cs}} строка \mbox{\hyperlink{_team_controller_8cs_source_l00042}{42}}
+
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+Controllers/\mbox{\hyperlink{_team_controller_8cs}{Team\+Controller.\+cs}}\end{DoxyCompactItemize}

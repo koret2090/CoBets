@@ -1,0 +1,90 @@
+\hypertarget{interface_controllers_1_1_i_base_controller}{}\doxysection{Шаблон интерфейса Controllers.\+IBase\+Controller\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}}
+\label{interface_controllers_1_1_i_base_controller}\index{Controllers.IBaseController$<$ T $>$@{Controllers.IBaseController$<$ T $>$}}
+
+
+Интерфейс контроллеров  
+
+
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+Task$<$ T?$>$ \mbox{\hyperlink{interface_controllers_1_1_i_base_controller_aabbf94a1407370b8348fe6824a95884f}{Add}} (T element)
+\item 
+Task$<$ List$<$ T $>$ $>$ \mbox{\hyperlink{interface_controllers_1_1_i_base_controller_ae0287cd17828942e444c5ea5b137b9ff}{Get\+All}} ()
+\item 
+Task$<$ bool $>$ \mbox{\hyperlink{interface_controllers_1_1_i_base_controller_ae40f2ce8bc55944bc3559bb6ae195884}{Delete}} (int id)
+\item 
+Task$<$ T?$>$ \mbox{\hyperlink{interface_controllers_1_1_i_base_controller_a4ff23e9bcb9c798e8b090a06c81b76b9}{Find\+Element\+By\+Id}} (int id)
+\item 
+Task$<$ T?$>$ \mbox{\hyperlink{interface_controllers_1_1_i_base_controller_a905000869a33a8f07fa32a5631f21553}{Find\+Element\+By\+Name}} (string name)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Интерфейс контроллеров 
+
+См. определение в файле \mbox{\hyperlink{_i_base_controller_8cs_source}{IBase\+Controller.\+cs}} строка \mbox{\hyperlink{_i_base_controller_8cs_source_l00009}{9}}
+
+
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{interface_controllers_1_1_i_base_controller_aabbf94a1407370b8348fe6824a95884f}\label{interface_controllers_1_1_i_base_controller_aabbf94a1407370b8348fe6824a95884f}} 
+\index{Controllers.IBaseController$<$ T $>$@{Controllers.IBaseController$<$ T $>$}!Add@{Add}}
+\index{Add@{Add}!Controllers.IBaseController$<$ T $>$@{Controllers.IBaseController$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}}
+{\footnotesize\ttfamily Task$<$ T?$>$ \mbox{\hyperlink{interface_controllers_1_1_i_base_controller}{Controllers.\+IBase\+Controller}}$<$ T $>$.Add (\begin{DoxyParamCaption}\item[{T}]{element }\end{DoxyParamCaption})}
+
+Добавление элемента в базу данных 
+\begin{DoxyParams}{Аргументы}
+{\em element} & Экземпляр элемента \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Экземпляр, добавленного элемента -- при успехе, null -- при неудаче 
+\end{DoxyReturn}
+\mbox{\Hypertarget{interface_controllers_1_1_i_base_controller_ae40f2ce8bc55944bc3559bb6ae195884}\label{interface_controllers_1_1_i_base_controller_ae40f2ce8bc55944bc3559bb6ae195884}} 
+\index{Controllers.IBaseController$<$ T $>$@{Controllers.IBaseController$<$ T $>$}!Delete@{Delete}}
+\index{Delete@{Delete}!Controllers.IBaseController$<$ T $>$@{Controllers.IBaseController$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Delete()}{Delete()}}
+{\footnotesize\ttfamily Task$<$ bool $>$ \mbox{\hyperlink{interface_controllers_1_1_i_base_controller}{Controllers.\+IBase\+Controller}}$<$ T $>$.Delete (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+Удаление элемента из базы данных 
+\begin{DoxyParams}{Аргументы}
+{\em id} & Идентификатор элемента \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true -- при успешном завершении операции, false -- иначе 
+\end{DoxyReturn}
+\mbox{\Hypertarget{interface_controllers_1_1_i_base_controller_a4ff23e9bcb9c798e8b090a06c81b76b9}\label{interface_controllers_1_1_i_base_controller_a4ff23e9bcb9c798e8b090a06c81b76b9}} 
+\index{Controllers.IBaseController$<$ T $>$@{Controllers.IBaseController$<$ T $>$}!FindElementById@{FindElementById}}
+\index{FindElementById@{FindElementById}!Controllers.IBaseController$<$ T $>$@{Controllers.IBaseController$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{FindElementById()}{FindElementById()}}
+{\footnotesize\ttfamily Task$<$ T?$>$ \mbox{\hyperlink{interface_controllers_1_1_i_base_controller}{Controllers.\+IBase\+Controller}}$<$ T $>$.Find\+Element\+By\+Id (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+Получение информации об элементе по его id \begin{DoxyReturn}{Возвращает}
+Экземпляр элемента -- при успехе, null -- иначе 
+\end{DoxyReturn}
+\mbox{\Hypertarget{interface_controllers_1_1_i_base_controller_a905000869a33a8f07fa32a5631f21553}\label{interface_controllers_1_1_i_base_controller_a905000869a33a8f07fa32a5631f21553}} 
+\index{Controllers.IBaseController$<$ T $>$@{Controllers.IBaseController$<$ T $>$}!FindElementByName@{FindElementByName}}
+\index{FindElementByName@{FindElementByName}!Controllers.IBaseController$<$ T $>$@{Controllers.IBaseController$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{FindElementByName()}{FindElementByName()}}
+{\footnotesize\ttfamily Task$<$ T?$>$ \mbox{\hyperlink{interface_controllers_1_1_i_base_controller}{Controllers.\+IBase\+Controller}}$<$ T $>$.Find\+Element\+By\+Name (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})}
+
+Получение информации об элементе по его имени \begin{DoxyReturn}{Возвращает}
+Экземпляр элемента -- при успехе, null -- иначе 
+\end{DoxyReturn}
+\mbox{\Hypertarget{interface_controllers_1_1_i_base_controller_ae0287cd17828942e444c5ea5b137b9ff}\label{interface_controllers_1_1_i_base_controller_ae0287cd17828942e444c5ea5b137b9ff}} 
+\index{Controllers.IBaseController$<$ T $>$@{Controllers.IBaseController$<$ T $>$}!GetAll@{GetAll}}
+\index{GetAll@{GetAll}!Controllers.IBaseController$<$ T $>$@{Controllers.IBaseController$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{GetAll()}{GetAll()}}
+{\footnotesize\ttfamily Task$<$ List$<$ T $>$ $>$ \mbox{\hyperlink{interface_controllers_1_1_i_base_controller}{Controllers.\+IBase\+Controller}}$<$ T $>$.Get\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Получение информации о всех элементах базы данных \begin{DoxyReturn}{Возвращает}
+Список элементов 
+\end{DoxyReturn}
+
+
+Объявления и описания членов интерфейса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+Controllers/\mbox{\hyperlink{_i_base_controller_8cs}{IBase\+Controller.\+cs}}\end{DoxyCompactItemize}

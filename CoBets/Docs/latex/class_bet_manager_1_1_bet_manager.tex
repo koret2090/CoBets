@@ -1,0 +1,174 @@
+\hypertarget{class_bet_manager_1_1_bet_manager}{}\doxysection{Класс Bet\+Manager.\+Bet\+Manager}
+\label{class_bet_manager_1_1_bet_manager}\index{BetManager.BetManager@{BetManager.BetManager}}
+
+
+Класс, отвечающий за расчёты, связанные со ставками.  
+
+
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_bet_manager_1_1_bet_manager_a063586cc1b417dec368aa133cf2cf879}{Bet\+Manager}} (double \mbox{\hyperlink{class_bet_manager_1_1_bet_manager_a615f8dced7c468e1c9aace01ad25f5bf}{Coef1}}, double \mbox{\hyperlink{class_bet_manager_1_1_bet_manager_a1871e545fd4f4d3abaa94389babca1e9}{Coef2}}, double \mbox{\hyperlink{class_bet_manager_1_1_bet_manager_a7afe56338a21411e116747a317a30ead}{Bet\+Sum}})
+\item 
+bool \mbox{\hyperlink{class_bet_manager_1_1_bet_manager_a8fbff491bee65b40e71e36a3746fd877}{Is\+Fork}} ()
+\item 
+void \mbox{\hyperlink{class_bet_manager_1_1_bet_manager_a9abf60fd424d30eade131f555afaa910}{Calculate\+Bets}} ()
+\item 
+double \mbox{\hyperlink{class_bet_manager_1_1_bet_manager_af31099f553668b484989d1f3025801cf}{Get\+Potential\+Gain\+Bet1}} ()
+\item 
+double \mbox{\hyperlink{class_bet_manager_1_1_bet_manager_a6a2de12d41659741bb79d1d73a0030d9}{Get\+Potential\+Gain\+Bet2}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Свойства}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_bet_manager_1_1_bet_manager_a615f8dced7c468e1c9aace01ad25f5bf}{Coef1}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+double \mbox{\hyperlink{class_bet_manager_1_1_bet_manager_a1871e545fd4f4d3abaa94389babca1e9}{Coef2}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+double \mbox{\hyperlink{class_bet_manager_1_1_bet_manager_a7afe56338a21411e116747a317a30ead}{Bet\+Sum}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+double \mbox{\hyperlink{class_bet_manager_1_1_bet_manager_ac80aa5de26c83519b9ddc33c5024e516}{Bet1}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+double \mbox{\hyperlink{class_bet_manager_1_1_bet_manager_a0a59859e29c6e2f9bbc6210e6bf99b87}{Bet2}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Класс, отвечающий за расчёты, связанные со ставками. 
+
+Служит для проверки возможности сущестсвования \char`\"{}вилки\char`\"{}, расчёта суммы ставок на исходы по известным коеффициентам матча. 
+
+См. определение в файле \mbox{\hyperlink{_bet_manager_8cs_source}{Bet\+Manager.\+cs}} строка \mbox{\hyperlink{_bet_manager_8cs_source_l00009}{9}}
+
+
+
+\doxysubsection{Конструктор(ы)}
+\mbox{\Hypertarget{class_bet_manager_1_1_bet_manager_a063586cc1b417dec368aa133cf2cf879}\label{class_bet_manager_1_1_bet_manager_a063586cc1b417dec368aa133cf2cf879}} 
+\index{BetManager.BetManager@{BetManager.BetManager}!BetManager@{BetManager}}
+\index{BetManager@{BetManager}!BetManager.BetManager@{BetManager.BetManager}}
+\doxysubsubsection{\texorpdfstring{BetManager()}{BetManager()}}
+{\footnotesize\ttfamily Bet\+Manager.\+Bet\+Manager.\+Bet\+Manager (\begin{DoxyParamCaption}\item[{double}]{Coef1,  }\item[{double}]{Coef2,  }\item[{double}]{Bet\+Sum }\end{DoxyParamCaption})}
+
+Конструктор 
+\begin{DoxyParams}{Аргументы}
+{\em Coef1} & Коэффициент на первую команду в матче \\
+\hline
+{\em Coef2} & Коэффициент на вторую команду в матче \\
+\hline
+{\em Bet\+Sum} & Доступная сумма для ставок \\
+\hline
+\end{DoxyParams}
+
+
+См. определение в файле \mbox{\hyperlink{_bet_manager_8cs_source}{Bet\+Manager.\+cs}} строка \mbox{\hyperlink{_bet_manager_8cs_source_l00038}{38}}
+
+
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{class_bet_manager_1_1_bet_manager_a9abf60fd424d30eade131f555afaa910}\label{class_bet_manager_1_1_bet_manager_a9abf60fd424d30eade131f555afaa910}} 
+\index{BetManager.BetManager@{BetManager.BetManager}!CalculateBets@{CalculateBets}}
+\index{CalculateBets@{CalculateBets}!BetManager.BetManager@{BetManager.BetManager}}
+\doxysubsubsection{\texorpdfstring{CalculateBets()}{CalculateBets()}}
+{\footnotesize\ttfamily void Bet\+Manager.\+Bet\+Manager.\+Calculate\+Bets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Высчитывает суммы ставок на первую и вторую команду 
+
+См. определение в файле \mbox{\hyperlink{_bet_manager_8cs_source}{Bet\+Manager.\+cs}} строка \mbox{\hyperlink{_bet_manager_8cs_source_l00057}{57}}
+
+\mbox{\Hypertarget{class_bet_manager_1_1_bet_manager_af31099f553668b484989d1f3025801cf}\label{class_bet_manager_1_1_bet_manager_af31099f553668b484989d1f3025801cf}} 
+\index{BetManager.BetManager@{BetManager.BetManager}!GetPotentialGainBet1@{GetPotentialGainBet1}}
+\index{GetPotentialGainBet1@{GetPotentialGainBet1}!BetManager.BetManager@{BetManager.BetManager}}
+\doxysubsubsection{\texorpdfstring{GetPotentialGainBet1()}{GetPotentialGainBet1()}}
+{\footnotesize\ttfamily double Bet\+Manager.\+Bet\+Manager.\+Get\+Potential\+Gain\+Bet1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Высчитывает потенциальный выигрыш денег при победе первой команды \begin{DoxyReturn}{Возвращает}
+Потенциальный выигрыш денег при победе первой команды 
+\end{DoxyReturn}
+
+
+См. определение в файле \mbox{\hyperlink{_bet_manager_8cs_source}{Bet\+Manager.\+cs}} строка \mbox{\hyperlink{_bet_manager_8cs_source_l00068}{68}}
+
+\mbox{\Hypertarget{class_bet_manager_1_1_bet_manager_a6a2de12d41659741bb79d1d73a0030d9}\label{class_bet_manager_1_1_bet_manager_a6a2de12d41659741bb79d1d73a0030d9}} 
+\index{BetManager.BetManager@{BetManager.BetManager}!GetPotentialGainBet2@{GetPotentialGainBet2}}
+\index{GetPotentialGainBet2@{GetPotentialGainBet2}!BetManager.BetManager@{BetManager.BetManager}}
+\doxysubsubsection{\texorpdfstring{GetPotentialGainBet2()}{GetPotentialGainBet2()}}
+{\footnotesize\ttfamily double Bet\+Manager.\+Bet\+Manager.\+Get\+Potential\+Gain\+Bet2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Высчитывает потенциальный выигрыш денег при победе второй команды \begin{DoxyReturn}{Возвращает}
+Потенциальный выигрыш денег при победе второй команды 
+\end{DoxyReturn}
+
+
+См. определение в файле \mbox{\hyperlink{_bet_manager_8cs_source}{Bet\+Manager.\+cs}} строка \mbox{\hyperlink{_bet_manager_8cs_source_l00077}{77}}
+
+\mbox{\Hypertarget{class_bet_manager_1_1_bet_manager_a8fbff491bee65b40e71e36a3746fd877}\label{class_bet_manager_1_1_bet_manager_a8fbff491bee65b40e71e36a3746fd877}} 
+\index{BetManager.BetManager@{BetManager.BetManager}!IsFork@{IsFork}}
+\index{IsFork@{IsFork}!BetManager.BetManager@{BetManager.BetManager}}
+\doxysubsubsection{\texorpdfstring{IsFork()}{IsFork()}}
+{\footnotesize\ttfamily bool Bet\+Manager.\+Bet\+Manager.\+Is\+Fork (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Проверка является ли ситуация \char`\"{}вилкой\char`\"{} \begin{DoxyReturn}{Возвращает}
+true -- если ситуация является вилкой, false -- иначе 
+\end{DoxyReturn}
+
+
+См. определение в файле \mbox{\hyperlink{_bet_manager_8cs_source}{Bet\+Manager.\+cs}} строка \mbox{\hyperlink{_bet_manager_8cs_source_l00049}{49}}
+
+
+
+\doxysubsection{Полный список свойств}
+\mbox{\Hypertarget{class_bet_manager_1_1_bet_manager_ac80aa5de26c83519b9ddc33c5024e516}\label{class_bet_manager_1_1_bet_manager_ac80aa5de26c83519b9ddc33c5024e516}} 
+\index{BetManager.BetManager@{BetManager.BetManager}!Bet1@{Bet1}}
+\index{Bet1@{Bet1}!BetManager.BetManager@{BetManager.BetManager}}
+\doxysubsubsection{\texorpdfstring{Bet1}{Bet1}}
+{\footnotesize\ttfamily double Bet\+Manager.\+Bet\+Manager.\+Bet1\hspace{0.3cm}{\ttfamily [get]}}
+
+Ставка на первую команду в матче 
+
+См. определение в файле \mbox{\hyperlink{_bet_manager_8cs_source}{Bet\+Manager.\+cs}} строка \mbox{\hyperlink{_bet_manager_8cs_source_l00026}{26}}
+
+\mbox{\Hypertarget{class_bet_manager_1_1_bet_manager_a0a59859e29c6e2f9bbc6210e6bf99b87}\label{class_bet_manager_1_1_bet_manager_a0a59859e29c6e2f9bbc6210e6bf99b87}} 
+\index{BetManager.BetManager@{BetManager.BetManager}!Bet2@{Bet2}}
+\index{Bet2@{Bet2}!BetManager.BetManager@{BetManager.BetManager}}
+\doxysubsubsection{\texorpdfstring{Bet2}{Bet2}}
+{\footnotesize\ttfamily double Bet\+Manager.\+Bet\+Manager.\+Bet2\hspace{0.3cm}{\ttfamily [get]}}
+
+Ставка на вторую команду в матче 
+
+См. определение в файле \mbox{\hyperlink{_bet_manager_8cs_source}{Bet\+Manager.\+cs}} строка \mbox{\hyperlink{_bet_manager_8cs_source_l00030}{30}}
+
+\mbox{\Hypertarget{class_bet_manager_1_1_bet_manager_a7afe56338a21411e116747a317a30ead}\label{class_bet_manager_1_1_bet_manager_a7afe56338a21411e116747a317a30ead}} 
+\index{BetManager.BetManager@{BetManager.BetManager}!BetSum@{BetSum}}
+\index{BetSum@{BetSum}!BetManager.BetManager@{BetManager.BetManager}}
+\doxysubsubsection{\texorpdfstring{BetSum}{BetSum}}
+{\footnotesize\ttfamily double Bet\+Manager.\+Bet\+Manager.\+Bet\+Sum\hspace{0.3cm}{\ttfamily [get]}}
+
+Доступная сумма для ставок 
+
+См. определение в файле \mbox{\hyperlink{_bet_manager_8cs_source}{Bet\+Manager.\+cs}} строка \mbox{\hyperlink{_bet_manager_8cs_source_l00022}{22}}
+
+\mbox{\Hypertarget{class_bet_manager_1_1_bet_manager_a615f8dced7c468e1c9aace01ad25f5bf}\label{class_bet_manager_1_1_bet_manager_a615f8dced7c468e1c9aace01ad25f5bf}} 
+\index{BetManager.BetManager@{BetManager.BetManager}!Coef1@{Coef1}}
+\index{Coef1@{Coef1}!BetManager.BetManager@{BetManager.BetManager}}
+\doxysubsubsection{\texorpdfstring{Coef1}{Coef1}}
+{\footnotesize\ttfamily double Bet\+Manager.\+Bet\+Manager.\+Coef1\hspace{0.3cm}{\ttfamily [get]}}
+
+Коэффициент на первую команду в матче 
+
+См. определение в файле \mbox{\hyperlink{_bet_manager_8cs_source}{Bet\+Manager.\+cs}} строка \mbox{\hyperlink{_bet_manager_8cs_source_l00014}{14}}
+
+\mbox{\Hypertarget{class_bet_manager_1_1_bet_manager_a1871e545fd4f4d3abaa94389babca1e9}\label{class_bet_manager_1_1_bet_manager_a1871e545fd4f4d3abaa94389babca1e9}} 
+\index{BetManager.BetManager@{BetManager.BetManager}!Coef2@{Coef2}}
+\index{Coef2@{Coef2}!BetManager.BetManager@{BetManager.BetManager}}
+\doxysubsubsection{\texorpdfstring{Coef2}{Coef2}}
+{\footnotesize\ttfamily double Bet\+Manager.\+Bet\+Manager.\+Coef2\hspace{0.3cm}{\ttfamily [get]}}
+
+Коэффициент на вторую команду в матче 
+
+См. определение в файле \mbox{\hyperlink{_bet_manager_8cs_source}{Bet\+Manager.\+cs}} строка \mbox{\hyperlink{_bet_manager_8cs_source_l00018}{18}}
+
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+Bet\+Manager/\mbox{\hyperlink{_bet_manager_8cs}{Bet\+Manager.\+cs}}\end{DoxyCompactItemize}

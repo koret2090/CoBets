@@ -1,0 +1,85 @@
+\hypertarget{_database_manager_8cs_source}{}\doxysection{Database\+Manager.\+cs}
+\label{_database_manager_8cs_source}\index{TelegramBot/DatabaseManager.cs@{TelegramBot/DatabaseManager.cs}}
+\mbox{\hyperlink{_database_manager_8cs}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00001}00001 \textcolor{keyword}{using} System.Linq;}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00002}00002 \textcolor{keyword}{using} System.Text;}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00003}00003 \textcolor{keyword}{using} System.Threading.Tasks;}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00004}00004 \textcolor{keyword}{using} \mbox{\hyperlink{namespace_co_bets_database}{CoBetsDatabase}}.\mbox{\hyperlink{namespace_co_bets_database_1_1_models}{Models}};}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00005}00005 \textcolor{keyword}{using} \mbox{\hyperlink{namespace_controllers}{Controllers}};}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00007}00007 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_telegram_bot}{TelegramBot}}}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00008}00008 \{}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00012}\mbox{\hyperlink{class_telegram_bot_1_1_database_manager}{00012}}     \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_telegram_bot_1_1_database_manager}{DatabaseManager}}}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00013}00013     \{}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00014}00014         \textcolor{keyword}{private} \textcolor{keyword}{const} \textcolor{keywordtype}{string} PlayersPath = \textcolor{stringliteral}{"{}../../../../Parsers/TeamsParser/players.csv"{}}; }
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00015}00015         \textcolor{keyword}{private} \textcolor{keyword}{const} \textcolor{keywordtype}{string} TeamsPath = \textcolor{stringliteral}{"{}../../../../Parsers/TeamsParser/teams.csv"{}};}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00016}00016         }
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00020}00020         \textcolor{keyword}{private} readonly \mbox{\hyperlink{class_controllers_1_1_player_controller}{PlayerController}} \_playerController;}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00024}00024         \textcolor{keyword}{private} readonly \mbox{\hyperlink{class_controllers_1_1_team_controller}{TeamController}} \_teamController;}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00025}00025         }
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00031}\mbox{\hyperlink{class_telegram_bot_1_1_database_manager_ab5ba23e93698a3b9af4be026061729b3}{00031}}         \textcolor{keyword}{public} \mbox{\hyperlink{class_telegram_bot_1_1_database_manager_ab5ba23e93698a3b9af4be026061729b3}{DatabaseManager}}(\mbox{\hyperlink{class_controllers_1_1_player_controller}{PlayerController}} playerController, \mbox{\hyperlink{class_controllers_1_1_team_controller}{TeamController}} teamController)}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00032}00032         \{}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00033}00033             \_playerController = playerController;}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00034}00034             \_teamController = teamController;}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00035}00035         \}}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00036}00036         }
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00041}\mbox{\hyperlink{class_telegram_bot_1_1_database_manager_ad7b8894a882e4e39a33499660fdfce51}{00041}}         \textcolor{keyword}{public} async Task \mbox{\hyperlink{class_telegram_bot_1_1_database_manager_ad7b8894a882e4e39a33499660fdfce51}{AddPlayers}}()}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00042}00042         \{}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00043}00043             \textcolor{keywordflow}{foreach} (\textcolor{keywordtype}{string} line \textcolor{keywordflow}{in} System.IO.File.ReadLines(PlayersPath))}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00044}00044             \{}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00045}00045                 var attributes = line.Split(\textcolor{stringliteral}{"{},"{}});}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00046}00046                 var checkPlayerId = \textcolor{keywordtype}{int}.TryParse(attributes[0], out var playerId);}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00047}00047                 var checkTeamId = \textcolor{keywordtype}{int}.TryParse(attributes[1], out var teamId);}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00048}00048                 var name = attributes[2];}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00049}00049                 var checkNumber = \textcolor{keywordtype}{int}.TryParse(attributes[3], out var number);}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00050}00050                 var checkPosition = \textcolor{keywordtype}{int}.TryParse(attributes[4], out var position);}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00052}00052                 var player = \textcolor{keyword}{new} \mbox{\hyperlink{class_co_bets_database_1_1_models_1_1_player}{Player}}(}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00053}00053                     checkPlayerId ? playerId : -\/1,}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00054}00054                     checkTeamId ? teamId : -\/1,}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00055}00055                     name,}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00056}00056                     checkNumber ? number : -\/1,}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00057}00057                     checkPosition ? position : -\/1}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00058}00058                 );}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00059}00059                 Task.WaitAll(\_playerController.Add(player));}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00060}00060             \}}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00061}00061         \}}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00062}00062         }
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00067}\mbox{\hyperlink{class_telegram_bot_1_1_database_manager_a6a64e30237ff289a0e1cbf494e930dbb}{00067}}         \textcolor{keyword}{public} async Task \mbox{\hyperlink{class_telegram_bot_1_1_database_manager_a6a64e30237ff289a0e1cbf494e930dbb}{AddTeams}}()}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00068}00068         \{}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00069}00069             \textcolor{keywordflow}{foreach} (\textcolor{keywordtype}{string} line \textcolor{keywordflow}{in} System.IO.File.ReadLines(TeamsPath))}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00070}00070             \{}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00071}00071                 var attributes = line.Split(\textcolor{stringliteral}{"{},"{}});}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00072}00072                 var checkTeamId = \textcolor{keywordtype}{int}.TryParse(attributes[0], out var teamId);}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00073}00073                 var name = attributes[1];}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00074}00074                 var team = \textcolor{keyword}{new} \mbox{\hyperlink{class_co_bets_database_1_1_models_1_1_team}{Team}}(}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00075}00075                     checkTeamId ? teamId : -\/1,}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00076}00076                     name}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00077}00077                 );}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00078}00078                 Task.WaitAll(\_teamController.Add(team));}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00079}00079             \}}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00080}00080         \}}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00081}00081         }
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00087}\mbox{\hyperlink{class_telegram_bot_1_1_database_manager_ac147097fa98cb9891fe0bae65a22528f}{00087}}         \textcolor{keyword}{public} async Task<string> \mbox{\hyperlink{class_telegram_bot_1_1_database_manager_ac147097fa98cb9891fe0bae65a22528f}{GetTeamInfo}}(\textcolor{keywordtype}{string} teamName)}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00088}00088         \{}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00089}00089              var sb = \textcolor{keyword}{new} StringBuilder();}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00090}00090              sb.Append(teamName + \textcolor{stringliteral}{"{}\(\backslash\)n-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00091}00091              }
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00092}00092              var team = await \_teamController.FindElementByName(teamName);}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00093}00093              var players = await \_playerController.GetPlayersByTeam(team);}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00094}00094 }
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00095}00095              sb.Append(\textcolor{stringliteral}{"{}Num \(\backslash\)t\(\backslash\)t\(\backslash\)t Pos \(\backslash\)t\(\backslash\)t\(\backslash\)t Name\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00096}00096              sb.Append(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00097}00097              }
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00098}00098              \textcolor{keywordflow}{foreach} (var player \textcolor{keywordflow}{in} players)}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00099}00099              \{}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00100}00100                  sb.AppendFormat(\textcolor{stringliteral}{"{}\{0, -\/10\} \{1, -\/10\} \{2\}\(\backslash\)n"{}}, player.Number, player.Position, player.Name);}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00101}00101              \}}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00102}00102 }
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00103}00103              \textcolor{keywordflow}{return} sb.ToString();}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00104}00104         \}}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00105}00105     \}}
+\DoxyCodeLine{\Hypertarget{_database_manager_8cs_source_l00106}00106 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,20 @@
+\hypertarget{_i_crud_repository_8cs_source}{}\doxysection{ICrud\+Repository.\+cs}
+\label{_i_crud_repository_8cs_source}\index{CoBetsDatabase/Repositories/Interfaces/ICrudRepository.cs@{CoBetsDatabase/Repositories/Interfaces/ICrudRepository.cs}}
+\mbox{\hyperlink{_i_crud_repository_8cs}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_i_crud_repository_8cs_source_l00001}00001 \textcolor{keyword}{using} System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_i_crud_repository_8cs_source_l00002}00002 \textcolor{keyword}{using} System.Threading.Tasks;}
+\DoxyCodeLine{\Hypertarget{_i_crud_repository_8cs_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{_i_crud_repository_8cs_source_l00004}\mbox{\hyperlink{namespace_co_bets_database_1_1_repositories_1_1_interfaces}{00004}} \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_co_bets_database_1_1_repositories_1_1_interfaces}{CoBetsDatabase.Repositories.Interfaces}}}
+\DoxyCodeLine{\Hypertarget{_i_crud_repository_8cs_source_l00005}00005 \{}
+\DoxyCodeLine{\Hypertarget{_i_crud_repository_8cs_source_l00009}\mbox{\hyperlink{interface_co_bets_database_1_1_repositories_1_1_interfaces_1_1_i_crud_repository}{00009}}     \textcolor{keyword}{public} \textcolor{keyword}{interface }\mbox{\hyperlink{interface_co_bets_database_1_1_repositories_1_1_interfaces_1_1_i_crud_repository}{ICrudRepository}}<T>}
+\DoxyCodeLine{\Hypertarget{_i_crud_repository_8cs_source_l00010}00010     \{}
+\DoxyCodeLine{\Hypertarget{_i_crud_repository_8cs_source_l00017}\mbox{\hyperlink{interface_co_bets_database_1_1_repositories_1_1_interfaces_1_1_i_crud_repository_a66d84f1494136294cd724aee47583466}{00017}}         Task<T?> \mbox{\hyperlink{interface_co_bets_database_1_1_repositories_1_1_interfaces_1_1_i_crud_repository_a66d84f1494136294cd724aee47583466}{Add}}(T element);}
+\DoxyCodeLine{\Hypertarget{_i_crud_repository_8cs_source_l00022}\mbox{\hyperlink{interface_co_bets_database_1_1_repositories_1_1_interfaces_1_1_i_crud_repository_a5db3fa2be2a4069b789963854831410c}{00022}}         Task<List<T>> \mbox{\hyperlink{interface_co_bets_database_1_1_repositories_1_1_interfaces_1_1_i_crud_repository_a5db3fa2be2a4069b789963854831410c}{GetAll}}();}
+\DoxyCodeLine{\Hypertarget{_i_crud_repository_8cs_source_l00029}\mbox{\hyperlink{interface_co_bets_database_1_1_repositories_1_1_interfaces_1_1_i_crud_repository_a5eaef481294a65c9e1c5238da2285198}{00029}}         Task<bool> \mbox{\hyperlink{interface_co_bets_database_1_1_repositories_1_1_interfaces_1_1_i_crud_repository_a5eaef481294a65c9e1c5238da2285198}{Delete}}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{_i_crud_repository_8cs_source_l00034}\mbox{\hyperlink{interface_co_bets_database_1_1_repositories_1_1_interfaces_1_1_i_crud_repository_ac3aede2c8ec1ed5d9bdce4c75e821bb0}{00034}}         Task<T?> \mbox{\hyperlink{interface_co_bets_database_1_1_repositories_1_1_interfaces_1_1_i_crud_repository_ac3aede2c8ec1ed5d9bdce4c75e821bb0}{FindElementById}}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{_i_crud_repository_8cs_source_l00039}\mbox{\hyperlink{interface_co_bets_database_1_1_repositories_1_1_interfaces_1_1_i_crud_repository_a1b1a163e06c89846fefec29d3e5d9335}{00039}}         Task<T?> \mbox{\hyperlink{interface_co_bets_database_1_1_repositories_1_1_interfaces_1_1_i_crud_repository_a1b1a163e06c89846fefec29d3e5d9335}{FindElementByName}}(\textcolor{keywordtype}{string} name);}
+\DoxyCodeLine{\Hypertarget{_i_crud_repository_8cs_source_l00040}00040     \}}
+\DoxyCodeLine{\Hypertarget{_i_crud_repository_8cs_source_l00041}00041 \}}
+
+\end{DoxyCode}

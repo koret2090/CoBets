@@ -1,0 +1,46 @@
+\hypertarget{_bet_manager_8cs_source}{}\doxysection{Bet\+Manager.\+cs}
+\label{_bet_manager_8cs_source}\index{BetManager/BetManager.cs@{BetManager/BetManager.cs}}
+\mbox{\hyperlink{_bet_manager_8cs}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_bet_manager_8cs_source_l00001}\mbox{\hyperlink{namespace_bet_manager}{00001}} \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_bet_manager}{BetManager}}}
+\DoxyCodeLine{\Hypertarget{_bet_manager_8cs_source_l00002}00002 \{}
+\DoxyCodeLine{\Hypertarget{_bet_manager_8cs_source_l00009}\mbox{\hyperlink{class_bet_manager_1_1_bet_manager}{00009}}     \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{namespace_bet_manager}{BetManager}}}
+\DoxyCodeLine{\Hypertarget{_bet_manager_8cs_source_l00010}00010     \{}
+\DoxyCodeLine{\Hypertarget{_bet_manager_8cs_source_l00014}\mbox{\hyperlink{class_bet_manager_1_1_bet_manager_a615f8dced7c468e1c9aace01ad25f5bf}{00014}}         \textcolor{keyword}{public} \textcolor{keywordtype}{double} Coef1 \{ \textcolor{keyword}{get}; \textcolor{keyword}{private} \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_bet_manager_8cs_source_l00018}\mbox{\hyperlink{class_bet_manager_1_1_bet_manager_a1871e545fd4f4d3abaa94389babca1e9}{00018}}         \textcolor{keyword}{public} \textcolor{keywordtype}{double} Coef2 \{ \textcolor{keyword}{get}; \textcolor{keyword}{private} \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_bet_manager_8cs_source_l00022}\mbox{\hyperlink{class_bet_manager_1_1_bet_manager_a7afe56338a21411e116747a317a30ead}{00022}}         \textcolor{keyword}{public} \textcolor{keywordtype}{double} BetSum \{ \textcolor{keyword}{get}; \textcolor{keyword}{private} \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_bet_manager_8cs_source_l00026}\mbox{\hyperlink{class_bet_manager_1_1_bet_manager_ac80aa5de26c83519b9ddc33c5024e516}{00026}}         \textcolor{keyword}{public} \textcolor{keywordtype}{double} Bet1 \{ \textcolor{keyword}{get}; \textcolor{keyword}{private} \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_bet_manager_8cs_source_l00030}\mbox{\hyperlink{class_bet_manager_1_1_bet_manager_a0a59859e29c6e2f9bbc6210e6bf99b87}{00030}}         \textcolor{keyword}{public}  \textcolor{keywordtype}{double} Bet2 \{ \textcolor{keyword}{get}; \textcolor{keyword}{private} \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_bet_manager_8cs_source_l00031}00031         }
+\DoxyCodeLine{\Hypertarget{_bet_manager_8cs_source_l00038}\mbox{\hyperlink{class_bet_manager_1_1_bet_manager_a063586cc1b417dec368aa133cf2cf879}{00038}}         \textcolor{keyword}{public} \mbox{\hyperlink{class_bet_manager_1_1_bet_manager_a063586cc1b417dec368aa133cf2cf879}{BetManager}}(\textcolor{keywordtype}{double} Coef1, \textcolor{keywordtype}{double} Coef2, \textcolor{keywordtype}{double} BetSum)}
+\DoxyCodeLine{\Hypertarget{_bet_manager_8cs_source_l00039}00039         \{}
+\DoxyCodeLine{\Hypertarget{_bet_manager_8cs_source_l00040}00040             this.Coef1 = Coef1;}
+\DoxyCodeLine{\Hypertarget{_bet_manager_8cs_source_l00041}00041             this.Coef2 = Coef2;}
+\DoxyCodeLine{\Hypertarget{_bet_manager_8cs_source_l00042}00042             this.BetSum = BetSum;}
+\DoxyCodeLine{\Hypertarget{_bet_manager_8cs_source_l00043}00043         \}}
+\DoxyCodeLine{\Hypertarget{_bet_manager_8cs_source_l00044}00044         }
+\DoxyCodeLine{\Hypertarget{_bet_manager_8cs_source_l00049}\mbox{\hyperlink{class_bet_manager_1_1_bet_manager_a8fbff491bee65b40e71e36a3746fd877}{00049}}         \textcolor{keyword}{public} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_bet_manager_1_1_bet_manager_a8fbff491bee65b40e71e36a3746fd877}{IsFork}}()}
+\DoxyCodeLine{\Hypertarget{_bet_manager_8cs_source_l00050}00050         \{}
+\DoxyCodeLine{\Hypertarget{_bet_manager_8cs_source_l00051}00051             \textcolor{keywordflow}{return} 1 / Coef1 + 1 / Coef2 < 1;}
+\DoxyCodeLine{\Hypertarget{_bet_manager_8cs_source_l00052}00052         \}}
+\DoxyCodeLine{\Hypertarget{_bet_manager_8cs_source_l00053}00053         }
+\DoxyCodeLine{\Hypertarget{_bet_manager_8cs_source_l00057}\mbox{\hyperlink{class_bet_manager_1_1_bet_manager_a9abf60fd424d30eade131f555afaa910}{00057}}         \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_bet_manager_1_1_bet_manager_a9abf60fd424d30eade131f555afaa910}{CalculateBets}}()}
+\DoxyCodeLine{\Hypertarget{_bet_manager_8cs_source_l00058}00058         \{}
+\DoxyCodeLine{\Hypertarget{_bet_manager_8cs_source_l00059}00059             \textcolor{keywordtype}{double} coefFork = (1 / Coef1 + 1 / Coef2);}
+\DoxyCodeLine{\Hypertarget{_bet_manager_8cs_source_l00060}00060             Bet1 = 1 / Coef1 / coefFork * BetSum;}
+\DoxyCodeLine{\Hypertarget{_bet_manager_8cs_source_l00061}00061             Bet2 = 1 / Coef2 / coefFork * BetSum;}
+\DoxyCodeLine{\Hypertarget{_bet_manager_8cs_source_l00062}00062         \}}
+\DoxyCodeLine{\Hypertarget{_bet_manager_8cs_source_l00063}00063         }
+\DoxyCodeLine{\Hypertarget{_bet_manager_8cs_source_l00068}\mbox{\hyperlink{class_bet_manager_1_1_bet_manager_af31099f553668b484989d1f3025801cf}{00068}}         \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_bet_manager_1_1_bet_manager_af31099f553668b484989d1f3025801cf}{GetPotentialGainBet1}}()}
+\DoxyCodeLine{\Hypertarget{_bet_manager_8cs_source_l00069}00069         \{}
+\DoxyCodeLine{\Hypertarget{_bet_manager_8cs_source_l00070}00070             \textcolor{keywordflow}{return} Coef1 * Bet1;}
+\DoxyCodeLine{\Hypertarget{_bet_manager_8cs_source_l00071}00071         \}}
+\DoxyCodeLine{\Hypertarget{_bet_manager_8cs_source_l00072}00072         }
+\DoxyCodeLine{\Hypertarget{_bet_manager_8cs_source_l00077}\mbox{\hyperlink{class_bet_manager_1_1_bet_manager_a6a2de12d41659741bb79d1d73a0030d9}{00077}}         \textcolor{keyword}{public} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_bet_manager_1_1_bet_manager_a6a2de12d41659741bb79d1d73a0030d9}{GetPotentialGainBet2}}()}
+\DoxyCodeLine{\Hypertarget{_bet_manager_8cs_source_l00078}00078         \{}
+\DoxyCodeLine{\Hypertarget{_bet_manager_8cs_source_l00079}00079             \textcolor{keywordflow}{return} Coef2 * Bet2;}
+\DoxyCodeLine{\Hypertarget{_bet_manager_8cs_source_l00080}00080         \}}
+\DoxyCodeLine{\Hypertarget{_bet_manager_8cs_source_l00081}00081     \}}
+\DoxyCodeLine{\Hypertarget{_bet_manager_8cs_source_l00082}00082 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,95 @@
+\hypertarget{class_telegram_bot_1_1_bot_messages}{}\doxysection{Класс Telegram\+Bot.\+Bot\+Messages}
+\label{class_telegram_bot_1_1_bot_messages}\index{TelegramBot.BotMessages@{TelegramBot.BotMessages}}
+
+
+Класс, отвечающий за формирования сообщений  
+
+
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_telegram_bot_1_1_bot_messages_af0b331fbfe84d7ebcbd9a4bfa19c3a8b}{Bot\+Messages}} (\mbox{\hyperlink{class_telegram_bot_1_1_database_manager}{Database\+Manager}} database\+Manager)
+\item 
+List$<$ string $>$ \mbox{\hyperlink{class_telegram_bot_1_1_bot_messages_a22fabfb08b982a8086aeecc03ea9e55a}{Form\+Match\+List}} ()
+\item 
+async Task$<$ List$<$ string $>$ $>$ \mbox{\hyperlink{class_telegram_bot_1_1_bot_messages_ae93e5acfa37f6cff4317924a6d4cc700}{Form\+Teams\+Info}} (string idx\+Str)
+\item 
+List$<$ string $>$ \mbox{\hyperlink{class_telegram_bot_1_1_bot_messages_a6c0228a4c1c17b472e9ab297f5e1e333}{Form\+Coefs\+Info}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Класс, отвечающий за формирования сообщений 
+
+См. определение в файле \mbox{\hyperlink{_bot_messages_8cs_source}{Bot\+Messages.\+cs}} строка \mbox{\hyperlink{_bot_messages_8cs_source_l00012}{12}}
+
+
+
+\doxysubsection{Конструктор(ы)}
+\mbox{\Hypertarget{class_telegram_bot_1_1_bot_messages_af0b331fbfe84d7ebcbd9a4bfa19c3a8b}\label{class_telegram_bot_1_1_bot_messages_af0b331fbfe84d7ebcbd9a4bfa19c3a8b}} 
+\index{TelegramBot.BotMessages@{TelegramBot.BotMessages}!BotMessages@{BotMessages}}
+\index{BotMessages@{BotMessages}!TelegramBot.BotMessages@{TelegramBot.BotMessages}}
+\doxysubsubsection{\texorpdfstring{BotMessages()}{BotMessages()}}
+{\footnotesize\ttfamily Telegram\+Bot.\+Bot\+Messages.\+Bot\+Messages (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_telegram_bot_1_1_database_manager}{Database\+Manager}}}]{database\+Manager }\end{DoxyParamCaption})}
+
+Конструктор 
+\begin{DoxyParams}{Аргументы}
+{\em database\+Manager} & Мэнеджер базы данных \\
+\hline
+\end{DoxyParams}
+
+
+См. определение в файле \mbox{\hyperlink{_bot_messages_8cs_source}{Bot\+Messages.\+cs}} строка \mbox{\hyperlink{_bot_messages_8cs_source_l00035}{35}}
+
+
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{class_telegram_bot_1_1_bot_messages_a6c0228a4c1c17b472e9ab297f5e1e333}\label{class_telegram_bot_1_1_bot_messages_a6c0228a4c1c17b472e9ab297f5e1e333}} 
+\index{TelegramBot.BotMessages@{TelegramBot.BotMessages}!FormCoefsInfo@{FormCoefsInfo}}
+\index{FormCoefsInfo@{FormCoefsInfo}!TelegramBot.BotMessages@{TelegramBot.BotMessages}}
+\doxysubsubsection{\texorpdfstring{FormCoefsInfo()}{FormCoefsInfo()}}
+{\footnotesize\ttfamily List$<$ string $>$ Telegram\+Bot.\+Bot\+Messages.\+Form\+Coefs\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Формирование информации о ставках и коэффициентах \begin{DoxyReturn}{Возвращает}
+coefs\+Info Информация о ставках и коэффициентах 
+\end{DoxyReturn}
+
+
+См. определение в файле \mbox{\hyperlink{_bot_messages_8cs_source}{Bot\+Messages.\+cs}} строка \mbox{\hyperlink{_bot_messages_8cs_source_l00111}{111}}
+
+\mbox{\Hypertarget{class_telegram_bot_1_1_bot_messages_a22fabfb08b982a8086aeecc03ea9e55a}\label{class_telegram_bot_1_1_bot_messages_a22fabfb08b982a8086aeecc03ea9e55a}} 
+\index{TelegramBot.BotMessages@{TelegramBot.BotMessages}!FormMatchList@{FormMatchList}}
+\index{FormMatchList@{FormMatchList}!TelegramBot.BotMessages@{TelegramBot.BotMessages}}
+\doxysubsubsection{\texorpdfstring{FormMatchList()}{FormMatchList()}}
+{\footnotesize\ttfamily List$<$ string $>$ Telegram\+Bot.\+Bot\+Messages.\+Form\+Match\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Формирование списка матчей \begin{DoxyReturn}{Возвращает}
+match\+List Список матчей 
+\end{DoxyReturn}
+
+
+См. определение в файле \mbox{\hyperlink{_bot_messages_8cs_source}{Bot\+Messages.\+cs}} строка \mbox{\hyperlink{_bot_messages_8cs_source_l00055}{55}}
+
+\mbox{\Hypertarget{class_telegram_bot_1_1_bot_messages_ae93e5acfa37f6cff4317924a6d4cc700}\label{class_telegram_bot_1_1_bot_messages_ae93e5acfa37f6cff4317924a6d4cc700}} 
+\index{TelegramBot.BotMessages@{TelegramBot.BotMessages}!FormTeamsInfo@{FormTeamsInfo}}
+\index{FormTeamsInfo@{FormTeamsInfo}!TelegramBot.BotMessages@{TelegramBot.BotMessages}}
+\doxysubsubsection{\texorpdfstring{FormTeamsInfo()}{FormTeamsInfo()}}
+{\footnotesize\ttfamily async Task$<$ List$<$ string $>$ $>$ Telegram\+Bot.\+Bot\+Messages.\+Form\+Teams\+Info (\begin{DoxyParamCaption}\item[{string}]{idx\+Str }\end{DoxyParamCaption})}
+
+Формирование информации о командах 
+\begin{DoxyParams}{Аргументы}
+{\em idx\+Str} & Индекс строки \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+match\+Info Информация о матче 
+\end{DoxyReturn}
+
+
+См. определение в файле \mbox{\hyperlink{_bot_messages_8cs_source}{Bot\+Messages.\+cs}} строка \mbox{\hyperlink{_bot_messages_8cs_source_l00085}{85}}
+
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+Telegram\+Bot/\mbox{\hyperlink{_bot_messages_8cs}{Bot\+Messages.\+cs}}\end{DoxyCompactItemize}

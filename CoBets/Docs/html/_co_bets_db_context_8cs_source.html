@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CoBets: Исходный файл CoBetsDatabase/CoBetsDbContext.cs</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">CoBets
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('_co_bets_db_context_8cs_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">CoBetsDbContext.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_co_bets_db_context_8cs.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using</span> <a class="code hl_namespace" href="namespace_co_bets_database.html">CoBetsDatabase</a>.<a class="code hl_namespace" href="namespace_co_bets_database_1_1_models.html">Models</a>;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using</span> Microsoft.EntityFrameworkCore;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="namespace_co_bets_database.html">    4</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_co_bets_database.html">CoBetsDatabase</a></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>{</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="class_co_bets_database_1_1_co_bets_db_context.html">    6</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="class_co_bets_database_1_1_co_bets_db_context.html">CoBetsDbContext</a> : DbContext</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="class_co_bets_database_1_1_co_bets_db_context.html#a500246d84cd53e7490c84ceb7fcbe0bc">    8</a></span>        <span class="keyword">public</span> DbSet&lt;Team&gt; <a class="code hl_property" href="class_co_bets_database_1_1_co_bets_db_context.html#a500246d84cd53e7490c84ceb7fcbe0bc">Teams</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="class_co_bets_database_1_1_co_bets_db_context.html#a5dbe4a40d97ea4a97241ffd94e2dac59">    9</a></span>        <span class="keyword">public</span> DbSet&lt;Player&gt; <a class="code hl_property" href="class_co_bets_database_1_1_co_bets_db_context.html#a5dbe4a40d97ea4a97241ffd94e2dac59">Players</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="class_co_bets_database_1_1_co_bets_db_context.html#ade4de83ad088b101e9fa5979ed5059c4">   11</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="class_co_bets_database_1_1_co_bets_db_context.html#ade4de83ad088b101e9fa5979ed5059c4">CoBetsDbContext</a>(DbContextOptions&lt;CoBetsDbContext&gt; options) : base(options)</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>            </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        }</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="class_co_bets_database_1_1_co_bets_db_context.html#aed229ffa484e64d6bfaa2fb3f0af077b">   16</a></span>        <span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_co_bets_database_1_1_co_bets_db_context.html#aed229ffa484e64d6bfaa2fb3f0af077b">OnModelCreating</a>(ModelBuilder modelBuilder)</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>            modelBuilder.Entity&lt;<a class="code hl_class" href="class_co_bets_database_1_1_models_1_1_player.html">Player</a>&gt;(entity =&gt;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>            {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>                entity.ToTable(<span class="stringliteral">&quot;players&quot;</span>);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>                entity.HasOne(p =&gt; p.Team)</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>                    .WithMany(t =&gt; t.Players)</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>                    .HasForeignKey(p =&gt; p.TeamId);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>                entity.HasData(</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>                    <span class="keyword">new</span> <a class="code hl_class" href="class_co_bets_database_1_1_models_1_1_player.html">Player</a>(1, 1, <span class="stringliteral">&quot;Aboba&quot;</span>, 20, 3)</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>                );</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            });</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            modelBuilder.Entity&lt;<a class="code hl_class" href="class_co_bets_database_1_1_models_1_1_team.html">Team</a>&gt;(entity =&gt;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>                entity.ToTable(<span class="stringliteral">&quot;team&quot;</span>);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>                entity.HasData(</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>                    <span class="keyword">new</span> <a class="code hl_class" href="class_co_bets_database_1_1_models_1_1_team.html">Team</a>(1, <span class="stringliteral">&quot;Aboba Team&quot;</span>)</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                );</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            });</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        }</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    }</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>}</div>
+<div class="ttc" id="aclass_co_bets_database_1_1_co_bets_db_context_html"><div class="ttname"><a href="class_co_bets_database_1_1_co_bets_db_context.html">CoBetsDatabase.CoBetsDbContext</a></div><div class="ttdef"><b>Definition:</b> <a href="_co_bets_db_context_8cs_source.html#l00006">CoBetsDbContext.cs:7</a></div></div>
+<div class="ttc" id="aclass_co_bets_database_1_1_co_bets_db_context_html_a500246d84cd53e7490c84ceb7fcbe0bc"><div class="ttname"><a href="class_co_bets_database_1_1_co_bets_db_context.html#a500246d84cd53e7490c84ceb7fcbe0bc">CoBetsDatabase.CoBetsDbContext.Teams</a></div><div class="ttdeci">DbSet&lt; Team &gt; Teams</div><div class="ttdef"><b>Definition:</b> <a href="_co_bets_db_context_8cs_source.html#l00008">CoBetsDbContext.cs:8</a></div></div>
+<div class="ttc" id="aclass_co_bets_database_1_1_co_bets_db_context_html_a5dbe4a40d97ea4a97241ffd94e2dac59"><div class="ttname"><a href="class_co_bets_database_1_1_co_bets_db_context.html#a5dbe4a40d97ea4a97241ffd94e2dac59">CoBetsDatabase.CoBetsDbContext.Players</a></div><div class="ttdeci">DbSet&lt; Player &gt; Players</div><div class="ttdef"><b>Definition:</b> <a href="_co_bets_db_context_8cs_source.html#l00009">CoBetsDbContext.cs:9</a></div></div>
+<div class="ttc" id="aclass_co_bets_database_1_1_co_bets_db_context_html_ade4de83ad088b101e9fa5979ed5059c4"><div class="ttname"><a href="class_co_bets_database_1_1_co_bets_db_context.html#ade4de83ad088b101e9fa5979ed5059c4">CoBetsDatabase.CoBetsDbContext.CoBetsDbContext</a></div><div class="ttdeci">CoBetsDbContext(DbContextOptions&lt; CoBetsDbContext &gt; options)</div><div class="ttdef"><b>Definition:</b> <a href="_co_bets_db_context_8cs_source.html#l00011">CoBetsDbContext.cs:11</a></div></div>
+<div class="ttc" id="aclass_co_bets_database_1_1_co_bets_db_context_html_aed229ffa484e64d6bfaa2fb3f0af077b"><div class="ttname"><a href="class_co_bets_database_1_1_co_bets_db_context.html#aed229ffa484e64d6bfaa2fb3f0af077b">CoBetsDatabase.CoBetsDbContext.OnModelCreating</a></div><div class="ttdeci">override void OnModelCreating(ModelBuilder modelBuilder)</div><div class="ttdef"><b>Definition:</b> <a href="_co_bets_db_context_8cs_source.html#l00016">CoBetsDbContext.cs:16</a></div></div>
+<div class="ttc" id="aclass_co_bets_database_1_1_models_1_1_player_html"><div class="ttname"><a href="class_co_bets_database_1_1_models_1_1_player.html">CoBetsDatabase.Models.Player</a></div><div class="ttdoc">Класс Игрока</div><div class="ttdef"><b>Definition:</b> <a href="_player_8cs_source.html#l00010">Player.cs:11</a></div></div>
+<div class="ttc" id="aclass_co_bets_database_1_1_models_1_1_team_html"><div class="ttname"><a href="class_co_bets_database_1_1_models_1_1_team.html">CoBetsDatabase.Models.Team</a></div><div class="ttdoc">Класс Команды</div><div class="ttdef"><b>Definition:</b> <a href="_team_8cs_source.html#l00011">Team.cs:12</a></div></div>
+<div class="ttc" id="anamespace_co_bets_database_1_1_models_html"><div class="ttname"><a href="namespace_co_bets_database_1_1_models.html">CoBetsDatabase.Models</a></div><div class="ttdef"><b>Definition:</b> <a href="_player_8cs_source.html#l00003">Player.cs:4</a></div></div>
+<div class="ttc" id="anamespace_co_bets_database_html"><div class="ttname"><a href="namespace_co_bets_database.html">CoBetsDatabase</a></div><div class="ttdef"><b>Definition:</b> <a href="_co_bets_db_context_8cs_source.html#l00004">CoBetsDbContext.cs:5</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_336fca52486af730acee74bb4ffa8897.html">CoBetsDatabase</a></li><li class="navelem"><a class="el" href="_co_bets_db_context_8cs.html">CoBetsDbContext.cs</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+  </ul>
+</div>
+</body>
+</html>

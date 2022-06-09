@@ -1,0 +1,150 @@
+\hypertarget{class_co_bets_database_1_1_repositories_1_1_implementation_1_1_team_repository}{}\doxysection{Класс Co\+Bets\+Database.\+Repositories.\+Implementation.\+Team\+Repository}
+\label{class_co_bets_database_1_1_repositories_1_1_implementation_1_1_team_repository}\index{CoBetsDatabase.Repositories.Implementation.TeamRepository@{CoBetsDatabase.Repositories.Implementation.TeamRepository}}
+
+
+Класс-\/репозиторий для команд  
+
+
+Граф наследования\+:Co\+Bets\+Database.\+Repositories.\+Implementation.\+Team\+Repository\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.126582cm]{class_co_bets_database_1_1_repositories_1_1_implementation_1_1_team_repository}
+\end{center}
+\end{figure}
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_co_bets_database_1_1_repositories_1_1_implementation_1_1_team_repository_a88d4596fc1c497bc8ded82b2f3a82adb}{Team\+Repository}} (\mbox{\hyperlink{class_co_bets_database_1_1_co_bets_db_context}{Co\+Bets\+Db\+Context}} database)
+\item 
+async Task$<$ \mbox{\hyperlink{class_co_bets_database_1_1_models_1_1_team}{Team}}?$>$ \mbox{\hyperlink{class_co_bets_database_1_1_repositories_1_1_implementation_1_1_team_repository_a7c19457d3bc4aa5e97d519c1a736885f}{Add}} (\mbox{\hyperlink{class_co_bets_database_1_1_models_1_1_team}{Team}} element)
+\item 
+async Task$<$ List$<$ \mbox{\hyperlink{class_co_bets_database_1_1_models_1_1_team}{Team}} $>$ $>$ \mbox{\hyperlink{class_co_bets_database_1_1_repositories_1_1_implementation_1_1_team_repository_afd3d7d27d01b5a90938e2eff7df1b6d1}{Get\+All}} ()
+\item 
+async Task$<$ bool $>$ \mbox{\hyperlink{class_co_bets_database_1_1_repositories_1_1_implementation_1_1_team_repository_a62d0ecf6182260c204e98e9f40d6375a}{Delete}} (int id)
+\item 
+async Task$<$ \mbox{\hyperlink{class_co_bets_database_1_1_models_1_1_team}{Team}}?$>$ \mbox{\hyperlink{class_co_bets_database_1_1_repositories_1_1_implementation_1_1_team_repository_aadab8e966795333e4a782202b3db493a}{Find\+Element\+By\+Id}} (int id)
+\item 
+async Task$<$ \mbox{\hyperlink{class_co_bets_database_1_1_models_1_1_team}{Team}}?$>$ \mbox{\hyperlink{class_co_bets_database_1_1_repositories_1_1_implementation_1_1_team_repository_a808028a0c651edf373fcfeb590f91aeb}{Find\+Element\+By\+Name}} (string name)
+\item 
+async void \mbox{\hyperlink{class_co_bets_database_1_1_repositories_1_1_implementation_1_1_team_repository_ab632c781e6ae7db7bee47277ecddffd6}{Dispose}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Класс-\/репозиторий для команд 
+
+Служит для реализации действий, связанных с командами и базой данных 
+
+См. определение в файле \mbox{\hyperlink{_team_repository_8cs_source}{Team\+Repository.\+cs}} строка \mbox{\hyperlink{_team_repository_8cs_source_l00016}{16}}
+
+
+
+\doxysubsection{Конструктор(ы)}
+\mbox{\Hypertarget{class_co_bets_database_1_1_repositories_1_1_implementation_1_1_team_repository_a88d4596fc1c497bc8ded82b2f3a82adb}\label{class_co_bets_database_1_1_repositories_1_1_implementation_1_1_team_repository_a88d4596fc1c497bc8ded82b2f3a82adb}} 
+\index{CoBetsDatabase.Repositories.Implementation.TeamRepository@{CoBetsDatabase.Repositories.Implementation.TeamRepository}!TeamRepository@{TeamRepository}}
+\index{TeamRepository@{TeamRepository}!CoBetsDatabase.Repositories.Implementation.TeamRepository@{CoBetsDatabase.Repositories.Implementation.TeamRepository}}
+\doxysubsubsection{\texorpdfstring{TeamRepository()}{TeamRepository()}}
+{\footnotesize\ttfamily Co\+Bets\+Database.\+Repositories.\+Implementation.\+Team\+Repository.\+Team\+Repository (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_co_bets_database_1_1_co_bets_db_context}{Co\+Bets\+Db\+Context}}}]{database }\end{DoxyParamCaption})}
+
+Конструктор 
+\begin{DoxyParams}{Аргументы}
+{\em database} & Контекст базы данных \\
+\hline
+\end{DoxyParams}
+
+
+См. определение в файле \mbox{\hyperlink{_team_repository_8cs_source}{Team\+Repository.\+cs}} строка \mbox{\hyperlink{_team_repository_8cs_source_l00027}{27}}
+
+
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{class_co_bets_database_1_1_repositories_1_1_implementation_1_1_team_repository_a7c19457d3bc4aa5e97d519c1a736885f}\label{class_co_bets_database_1_1_repositories_1_1_implementation_1_1_team_repository_a7c19457d3bc4aa5e97d519c1a736885f}} 
+\index{CoBetsDatabase.Repositories.Implementation.TeamRepository@{CoBetsDatabase.Repositories.Implementation.TeamRepository}!Add@{Add}}
+\index{Add@{Add}!CoBetsDatabase.Repositories.Implementation.TeamRepository@{CoBetsDatabase.Repositories.Implementation.TeamRepository}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}}
+{\footnotesize\ttfamily async Task$<$ \mbox{\hyperlink{class_co_bets_database_1_1_models_1_1_team}{Team}}?$>$ Co\+Bets\+Database.\+Repositories.\+Implementation.\+Team\+Repository.\+Add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_co_bets_database_1_1_models_1_1_team}{Team}}}]{element }\end{DoxyParamCaption})}
+
+Добавление команды в базу данных 
+\begin{DoxyParams}{Аргументы}
+{\em element} & Экземпляр команды \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Экземпляр, добавленной команды -- при успехе, null -- при неудаче 
+\end{DoxyReturn}
+
+
+См. определение в файле \mbox{\hyperlink{_team_repository_8cs_source}{Team\+Repository.\+cs}} строка \mbox{\hyperlink{_team_repository_8cs_source_l00038}{38}}
+
+\mbox{\Hypertarget{class_co_bets_database_1_1_repositories_1_1_implementation_1_1_team_repository_a62d0ecf6182260c204e98e9f40d6375a}\label{class_co_bets_database_1_1_repositories_1_1_implementation_1_1_team_repository_a62d0ecf6182260c204e98e9f40d6375a}} 
+\index{CoBetsDatabase.Repositories.Implementation.TeamRepository@{CoBetsDatabase.Repositories.Implementation.TeamRepository}!Delete@{Delete}}
+\index{Delete@{Delete}!CoBetsDatabase.Repositories.Implementation.TeamRepository@{CoBetsDatabase.Repositories.Implementation.TeamRepository}}
+\doxysubsubsection{\texorpdfstring{Delete()}{Delete()}}
+{\footnotesize\ttfamily async Task$<$ bool $>$ Co\+Bets\+Database.\+Repositories.\+Implementation.\+Team\+Repository.\+Delete (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+Удаление команды из базы данных 
+\begin{DoxyParams}{Аргументы}
+{\em id} & Идентификатор команды \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true -- при успешном завершении операции, false -- иначе 
+\end{DoxyReturn}
+
+
+См. определение в файле \mbox{\hyperlink{_team_repository_8cs_source}{Team\+Repository.\+cs}} строка \mbox{\hyperlink{_team_repository_8cs_source_l00067}{67}}
+
+\mbox{\Hypertarget{class_co_bets_database_1_1_repositories_1_1_implementation_1_1_team_repository_ab632c781e6ae7db7bee47277ecddffd6}\label{class_co_bets_database_1_1_repositories_1_1_implementation_1_1_team_repository_ab632c781e6ae7db7bee47277ecddffd6}} 
+\index{CoBetsDatabase.Repositories.Implementation.TeamRepository@{CoBetsDatabase.Repositories.Implementation.TeamRepository}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!CoBetsDatabase.Repositories.Implementation.TeamRepository@{CoBetsDatabase.Repositories.Implementation.TeamRepository}}
+\doxysubsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily async void Co\+Bets\+Database.\+Repositories.\+Implementation.\+Team\+Repository.\+Dispose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+См. определение в файле \mbox{\hyperlink{_team_repository_8cs_source}{Team\+Repository.\+cs}} строка \mbox{\hyperlink{_team_repository_8cs_source_l00106}{106}}
+
+\mbox{\Hypertarget{class_co_bets_database_1_1_repositories_1_1_implementation_1_1_team_repository_aadab8e966795333e4a782202b3db493a}\label{class_co_bets_database_1_1_repositories_1_1_implementation_1_1_team_repository_aadab8e966795333e4a782202b3db493a}} 
+\index{CoBetsDatabase.Repositories.Implementation.TeamRepository@{CoBetsDatabase.Repositories.Implementation.TeamRepository}!FindElementById@{FindElementById}}
+\index{FindElementById@{FindElementById}!CoBetsDatabase.Repositories.Implementation.TeamRepository@{CoBetsDatabase.Repositories.Implementation.TeamRepository}}
+\doxysubsubsection{\texorpdfstring{FindElementById()}{FindElementById()}}
+{\footnotesize\ttfamily async Task$<$ \mbox{\hyperlink{class_co_bets_database_1_1_models_1_1_team}{Team}}?$>$ Co\+Bets\+Database.\+Repositories.\+Implementation.\+Team\+Repository.\+Find\+Element\+By\+Id (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+Получение информации о команде по ее id \begin{DoxyReturn}{Возвращает}
+Экземпляр команды -- при успехе, null -- иначе 
+\end{DoxyReturn}
+
+
+См. определение в файле \mbox{\hyperlink{_team_repository_8cs_source}{Team\+Repository.\+cs}} строка \mbox{\hyperlink{_team_repository_8cs_source_l00091}{91}}
+
+\mbox{\Hypertarget{class_co_bets_database_1_1_repositories_1_1_implementation_1_1_team_repository_a808028a0c651edf373fcfeb590f91aeb}\label{class_co_bets_database_1_1_repositories_1_1_implementation_1_1_team_repository_a808028a0c651edf373fcfeb590f91aeb}} 
+\index{CoBetsDatabase.Repositories.Implementation.TeamRepository@{CoBetsDatabase.Repositories.Implementation.TeamRepository}!FindElementByName@{FindElementByName}}
+\index{FindElementByName@{FindElementByName}!CoBetsDatabase.Repositories.Implementation.TeamRepository@{CoBetsDatabase.Repositories.Implementation.TeamRepository}}
+\doxysubsubsection{\texorpdfstring{FindElementByName()}{FindElementByName()}}
+{\footnotesize\ttfamily async Task$<$ \mbox{\hyperlink{class_co_bets_database_1_1_models_1_1_team}{Team}}?$>$ Co\+Bets\+Database.\+Repositories.\+Implementation.\+Team\+Repository.\+Find\+Element\+By\+Name (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})}
+
+Получение информации о команде по ее названию \begin{DoxyReturn}{Возвращает}
+Экземпляр команды -- при успехе, null -- иначе 
+\end{DoxyReturn}
+
+
+См. определение в файле \mbox{\hyperlink{_team_repository_8cs_source}{Team\+Repository.\+cs}} строка \mbox{\hyperlink{_team_repository_8cs_source_l00101}{101}}
+
+\mbox{\Hypertarget{class_co_bets_database_1_1_repositories_1_1_implementation_1_1_team_repository_afd3d7d27d01b5a90938e2eff7df1b6d1}\label{class_co_bets_database_1_1_repositories_1_1_implementation_1_1_team_repository_afd3d7d27d01b5a90938e2eff7df1b6d1}} 
+\index{CoBetsDatabase.Repositories.Implementation.TeamRepository@{CoBetsDatabase.Repositories.Implementation.TeamRepository}!GetAll@{GetAll}}
+\index{GetAll@{GetAll}!CoBetsDatabase.Repositories.Implementation.TeamRepository@{CoBetsDatabase.Repositories.Implementation.TeamRepository}}
+\doxysubsubsection{\texorpdfstring{GetAll()}{GetAll()}}
+{\footnotesize\ttfamily async Task$<$ List$<$ \mbox{\hyperlink{class_co_bets_database_1_1_models_1_1_team}{Team}} $>$ $>$ Co\+Bets\+Database.\+Repositories.\+Implementation.\+Team\+Repository.\+Get\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Получение информации о всех командах базы данных \begin{DoxyReturn}{Возвращает}
+Список команд 
+\end{DoxyReturn}
+
+
+См. определение в файле \mbox{\hyperlink{_team_repository_8cs_source}{Team\+Repository.\+cs}} строка \mbox{\hyperlink{_team_repository_8cs_source_l00056}{56}}
+
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+Co\+Bets\+Database/\+Repositories/\+Implementation/\mbox{\hyperlink{_team_repository_8cs}{Team\+Repository.\+cs}}\end{DoxyCompactItemize}

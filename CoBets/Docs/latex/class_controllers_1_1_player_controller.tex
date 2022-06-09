@@ -1,0 +1,151 @@
+\hypertarget{class_controllers_1_1_player_controller}{}\doxysection{Класс Controllers.\+Player\+Controller}
+\label{class_controllers_1_1_player_controller}\index{Controllers.PlayerController@{Controllers.PlayerController}}
+
+
+Контроллер игроков  
+
+
+Граф наследования\+:Controllers.\+Player\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_controllers_1_1_player_controller}
+\end{center}
+\end{figure}
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_controllers_1_1_player_controller_a0757806ca7b9b992b681bbbb5c74697a}{Player\+Controller}} (\mbox{\hyperlink{interface_co_bets_database_1_1_repositories_1_1_interfaces_1_1_i_player_repository}{IPlayer\+Repository}} player\+Repository)
+\item 
+Task$<$ \mbox{\hyperlink{class_co_bets_database_1_1_models_1_1_player}{Player}}?$>$ \mbox{\hyperlink{class_controllers_1_1_player_controller_ab187acafbff8134b06e464d46153a919}{Add}} (\mbox{\hyperlink{class_co_bets_database_1_1_models_1_1_player}{Player}} element)
+\item 
+Task$<$ List$<$ \mbox{\hyperlink{class_co_bets_database_1_1_models_1_1_player}{Player}} $>$ $>$ \mbox{\hyperlink{class_controllers_1_1_player_controller_a4a57ad1d07c6a1d3c1f27422f89a0b76}{Get\+All}} ()
+\item 
+Task$<$ bool $>$ \mbox{\hyperlink{class_controllers_1_1_player_controller_af3b723f9943fb77531c18f1a10f81d45}{Delete}} (int id)
+\item 
+Task$<$ \mbox{\hyperlink{class_co_bets_database_1_1_models_1_1_player}{Player}}?$>$ \mbox{\hyperlink{class_controllers_1_1_player_controller_a175eec9c716d829195353569423e6fc2}{Find\+Element\+By\+Id}} (int id)
+\item 
+Task$<$ \mbox{\hyperlink{class_co_bets_database_1_1_models_1_1_player}{Player}}?$>$ \mbox{\hyperlink{class_controllers_1_1_player_controller_ab461e0c7d13aedab2bed7a3dd1bce4f2}{Find\+Element\+By\+Name}} (string name)
+\item 
+Task$<$ List$<$ \mbox{\hyperlink{class_co_bets_database_1_1_models_1_1_player}{Player}} $>$ $>$ \mbox{\hyperlink{class_controllers_1_1_player_controller_af1486ebf71cf8ac10397524c31f5b076}{Get\+Players\+By\+Team}} (\mbox{\hyperlink{class_co_bets_database_1_1_models_1_1_team}{Team}} team)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Контроллер игроков 
+
+См. определение в файле \mbox{\hyperlink{_player_controller_8cs_source}{Player\+Controller.\+cs}} строка \mbox{\hyperlink{_player_controller_8cs_source_l00011}{11}}
+
+
+
+\doxysubsection{Конструктор(ы)}
+\mbox{\Hypertarget{class_controllers_1_1_player_controller_a0757806ca7b9b992b681bbbb5c74697a}\label{class_controllers_1_1_player_controller_a0757806ca7b9b992b681bbbb5c74697a}} 
+\index{Controllers.PlayerController@{Controllers.PlayerController}!PlayerController@{PlayerController}}
+\index{PlayerController@{PlayerController}!Controllers.PlayerController@{Controllers.PlayerController}}
+\doxysubsubsection{\texorpdfstring{PlayerController()}{PlayerController()}}
+{\footnotesize\ttfamily Controllers.\+Player\+Controller.\+Player\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_co_bets_database_1_1_repositories_1_1_interfaces_1_1_i_player_repository}{IPlayer\+Repository}}}]{player\+Repository }\end{DoxyParamCaption})}
+
+Конструктор 
+\begin{DoxyParams}{Аргументы}
+{\em player\+Repository} & Репозиторий игроков \\
+\hline
+\end{DoxyParams}
+
+
+См. определение в файле \mbox{\hyperlink{_player_controller_8cs_source}{Player\+Controller.\+cs}} строка \mbox{\hyperlink{_player_controller_8cs_source_l00022}{22}}
+
+
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{class_controllers_1_1_player_controller_ab187acafbff8134b06e464d46153a919}\label{class_controllers_1_1_player_controller_ab187acafbff8134b06e464d46153a919}} 
+\index{Controllers.PlayerController@{Controllers.PlayerController}!Add@{Add}}
+\index{Add@{Add}!Controllers.PlayerController@{Controllers.PlayerController}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}}
+{\footnotesize\ttfamily Task$<$ \mbox{\hyperlink{class_co_bets_database_1_1_models_1_1_player}{Player}}?$>$ Controllers.\+Player\+Controller.\+Add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_co_bets_database_1_1_models_1_1_player}{Player}}}]{element }\end{DoxyParamCaption})}
+
+Добавление игрока в базу данных 
+\begin{DoxyParams}{Аргументы}
+{\em element} & Экземпляр игрока \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Экземпляр, добавленного игрока -- при успехе, null -- при неудаче 
+\end{DoxyReturn}
+
+
+См. определение в файле \mbox{\hyperlink{_player_controller_8cs_source}{Player\+Controller.\+cs}} строка \mbox{\hyperlink{_player_controller_8cs_source_l00033}{33}}
+
+\mbox{\Hypertarget{class_controllers_1_1_player_controller_af3b723f9943fb77531c18f1a10f81d45}\label{class_controllers_1_1_player_controller_af3b723f9943fb77531c18f1a10f81d45}} 
+\index{Controllers.PlayerController@{Controllers.PlayerController}!Delete@{Delete}}
+\index{Delete@{Delete}!Controllers.PlayerController@{Controllers.PlayerController}}
+\doxysubsubsection{\texorpdfstring{Delete()}{Delete()}}
+{\footnotesize\ttfamily Task$<$ bool $>$ Controllers.\+Player\+Controller.\+Delete (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+Удаление игрока из базы данных 
+\begin{DoxyParams}{Аргументы}
+{\em id} & Идентификатор игрока \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true -- при успешном завершении операции, false -- иначе 
+\end{DoxyReturn}
+
+
+См. определение в файле \mbox{\hyperlink{_player_controller_8cs_source}{Player\+Controller.\+cs}} строка \mbox{\hyperlink{_player_controller_8cs_source_l00053}{53}}
+
+\mbox{\Hypertarget{class_controllers_1_1_player_controller_a175eec9c716d829195353569423e6fc2}\label{class_controllers_1_1_player_controller_a175eec9c716d829195353569423e6fc2}} 
+\index{Controllers.PlayerController@{Controllers.PlayerController}!FindElementById@{FindElementById}}
+\index{FindElementById@{FindElementById}!Controllers.PlayerController@{Controllers.PlayerController}}
+\doxysubsubsection{\texorpdfstring{FindElementById()}{FindElementById()}}
+{\footnotesize\ttfamily Task$<$ \mbox{\hyperlink{class_co_bets_database_1_1_models_1_1_player}{Player}}?$>$ Controllers.\+Player\+Controller.\+Find\+Element\+By\+Id (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+Получение информации об игроке по его id \begin{DoxyReturn}{Возвращает}
+Экземпляр игрока -- при успехе, null -- иначе 
+\end{DoxyReturn}
+
+
+См. определение в файле \mbox{\hyperlink{_player_controller_8cs_source}{Player\+Controller.\+cs}} строка \mbox{\hyperlink{_player_controller_8cs_source_l00062}{62}}
+
+\mbox{\Hypertarget{class_controllers_1_1_player_controller_ab461e0c7d13aedab2bed7a3dd1bce4f2}\label{class_controllers_1_1_player_controller_ab461e0c7d13aedab2bed7a3dd1bce4f2}} 
+\index{Controllers.PlayerController@{Controllers.PlayerController}!FindElementByName@{FindElementByName}}
+\index{FindElementByName@{FindElementByName}!Controllers.PlayerController@{Controllers.PlayerController}}
+\doxysubsubsection{\texorpdfstring{FindElementByName()}{FindElementByName()}}
+{\footnotesize\ttfamily Task$<$ \mbox{\hyperlink{class_co_bets_database_1_1_models_1_1_player}{Player}}?$>$ Controllers.\+Player\+Controller.\+Find\+Element\+By\+Name (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})}
+
+Получение информации об игроке по его имени \begin{DoxyReturn}{Возвращает}
+Экземпляр игрока -- при успехе, null -- иначе 
+\end{DoxyReturn}
+
+
+См. определение в файле \mbox{\hyperlink{_player_controller_8cs_source}{Player\+Controller.\+cs}} строка \mbox{\hyperlink{_player_controller_8cs_source_l00071}{71}}
+
+\mbox{\Hypertarget{class_controllers_1_1_player_controller_a4a57ad1d07c6a1d3c1f27422f89a0b76}\label{class_controllers_1_1_player_controller_a4a57ad1d07c6a1d3c1f27422f89a0b76}} 
+\index{Controllers.PlayerController@{Controllers.PlayerController}!GetAll@{GetAll}}
+\index{GetAll@{GetAll}!Controllers.PlayerController@{Controllers.PlayerController}}
+\doxysubsubsection{\texorpdfstring{GetAll()}{GetAll()}}
+{\footnotesize\ttfamily Task$<$ List$<$ \mbox{\hyperlink{class_co_bets_database_1_1_models_1_1_player}{Player}} $>$ $>$ Controllers.\+Player\+Controller.\+Get\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Получение информации о всех игроках базы данных \begin{DoxyReturn}{Возвращает}
+Список игроков 
+\end{DoxyReturn}
+
+
+См. определение в файле \mbox{\hyperlink{_player_controller_8cs_source}{Player\+Controller.\+cs}} строка \mbox{\hyperlink{_player_controller_8cs_source_l00042}{42}}
+
+\mbox{\Hypertarget{class_controllers_1_1_player_controller_af1486ebf71cf8ac10397524c31f5b076}\label{class_controllers_1_1_player_controller_af1486ebf71cf8ac10397524c31f5b076}} 
+\index{Controllers.PlayerController@{Controllers.PlayerController}!GetPlayersByTeam@{GetPlayersByTeam}}
+\index{GetPlayersByTeam@{GetPlayersByTeam}!Controllers.PlayerController@{Controllers.PlayerController}}
+\doxysubsubsection{\texorpdfstring{GetPlayersByTeam()}{GetPlayersByTeam()}}
+{\footnotesize\ttfamily Task$<$ List$<$ \mbox{\hyperlink{class_co_bets_database_1_1_models_1_1_player}{Player}} $>$ $>$ Controllers.\+Player\+Controller.\+Get\+Players\+By\+Team (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_co_bets_database_1_1_models_1_1_team}{Team}}}]{team }\end{DoxyParamCaption})}
+
+Получение информации об игроке по его команде \begin{DoxyReturn}{Возвращает}
+Экземпляр игрока -- при успехе, null -- иначе 
+\end{DoxyReturn}
+
+
+См. определение в файле \mbox{\hyperlink{_player_controller_8cs_source}{Player\+Controller.\+cs}} строка \mbox{\hyperlink{_player_controller_8cs_source_l00080}{80}}
+
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+Controllers/\mbox{\hyperlink{_player_controller_8cs}{Player\+Controller.\+cs}}\end{DoxyCompactItemize}

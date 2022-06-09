@@ -1,0 +1,101 @@
+\hypertarget{class_telegram_bot_1_1_database_manager}{}\doxysection{Класс Telegram\+Bot.\+Database\+Manager}
+\label{class_telegram_bot_1_1_database_manager}\index{TelegramBot.DatabaseManager@{TelegramBot.DatabaseManager}}
+
+
+Класс, отвечающий за действия, связанные с базой данных и запросами бота  
+
+
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_telegram_bot_1_1_database_manager_ab5ba23e93698a3b9af4be026061729b3}{Database\+Manager}} (\mbox{\hyperlink{class_controllers_1_1_player_controller}{Player\+Controller}} player\+Controller, \mbox{\hyperlink{class_controllers_1_1_team_controller}{Team\+Controller}} team\+Controller)
+\item 
+async Task \mbox{\hyperlink{class_telegram_bot_1_1_database_manager_ad7b8894a882e4e39a33499660fdfce51}{Add\+Players}} ()
+\item 
+async Task \mbox{\hyperlink{class_telegram_bot_1_1_database_manager_a6a64e30237ff289a0e1cbf494e930dbb}{Add\+Teams}} ()
+\item 
+async Task$<$ string $>$ \mbox{\hyperlink{class_telegram_bot_1_1_database_manager_ac147097fa98cb9891fe0bae65a22528f}{Get\+Team\+Info}} (string team\+Name)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Класс, отвечающий за действия, связанные с базой данных и запросами бота 
+
+См. определение в файле \mbox{\hyperlink{_database_manager_8cs_source}{Database\+Manager.\+cs}} строка \mbox{\hyperlink{_database_manager_8cs_source_l00012}{12}}
+
+
+
+\doxysubsection{Конструктор(ы)}
+\mbox{\Hypertarget{class_telegram_bot_1_1_database_manager_ab5ba23e93698a3b9af4be026061729b3}\label{class_telegram_bot_1_1_database_manager_ab5ba23e93698a3b9af4be026061729b3}} 
+\index{TelegramBot.DatabaseManager@{TelegramBot.DatabaseManager}!DatabaseManager@{DatabaseManager}}
+\index{DatabaseManager@{DatabaseManager}!TelegramBot.DatabaseManager@{TelegramBot.DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{DatabaseManager()}{DatabaseManager()}}
+{\footnotesize\ttfamily Telegram\+Bot.\+Database\+Manager.\+Database\+Manager (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_controllers_1_1_player_controller}{Player\+Controller}}}]{player\+Controller,  }\item[{\mbox{\hyperlink{class_controllers_1_1_team_controller}{Team\+Controller}}}]{team\+Controller }\end{DoxyParamCaption})}
+
+Конструктор 
+\begin{DoxyParams}{Аргументы}
+{\em player\+Controller} & Контроллер игроков \\
+\hline
+{\em team\+Controller} & Контроллер команд \\
+\hline
+\end{DoxyParams}
+
+
+См. определение в файле \mbox{\hyperlink{_database_manager_8cs_source}{Database\+Manager.\+cs}} строка \mbox{\hyperlink{_database_manager_8cs_source_l00031}{31}}
+
+
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{class_telegram_bot_1_1_database_manager_ad7b8894a882e4e39a33499660fdfce51}\label{class_telegram_bot_1_1_database_manager_ad7b8894a882e4e39a33499660fdfce51}} 
+\index{TelegramBot.DatabaseManager@{TelegramBot.DatabaseManager}!AddPlayers@{AddPlayers}}
+\index{AddPlayers@{AddPlayers}!TelegramBot.DatabaseManager@{TelegramBot.DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{AddPlayers()}{AddPlayers()}}
+{\footnotesize\ttfamily async Task Telegram\+Bot.\+Database\+Manager.\+Add\+Players (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Добавление игроков в базу данных 
+\begin{DoxyParams}{Аргументы}
+{\em Players\+Path} & Путь к файлу с игроками \\
+\hline
+\end{DoxyParams}
+
+
+См. определение в файле \mbox{\hyperlink{_database_manager_8cs_source}{Database\+Manager.\+cs}} строка \mbox{\hyperlink{_database_manager_8cs_source_l00041}{41}}
+
+\mbox{\Hypertarget{class_telegram_bot_1_1_database_manager_a6a64e30237ff289a0e1cbf494e930dbb}\label{class_telegram_bot_1_1_database_manager_a6a64e30237ff289a0e1cbf494e930dbb}} 
+\index{TelegramBot.DatabaseManager@{TelegramBot.DatabaseManager}!AddTeams@{AddTeams}}
+\index{AddTeams@{AddTeams}!TelegramBot.DatabaseManager@{TelegramBot.DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{AddTeams()}{AddTeams()}}
+{\footnotesize\ttfamily async Task Telegram\+Bot.\+Database\+Manager.\+Add\+Teams (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Добавление команд в базу данных 
+\begin{DoxyParams}{Аргументы}
+{\em Teams\+Path} & Путь к файлу с командами \\
+\hline
+\end{DoxyParams}
+
+
+См. определение в файле \mbox{\hyperlink{_database_manager_8cs_source}{Database\+Manager.\+cs}} строка \mbox{\hyperlink{_database_manager_8cs_source_l00067}{67}}
+
+\mbox{\Hypertarget{class_telegram_bot_1_1_database_manager_ac147097fa98cb9891fe0bae65a22528f}\label{class_telegram_bot_1_1_database_manager_ac147097fa98cb9891fe0bae65a22528f}} 
+\index{TelegramBot.DatabaseManager@{TelegramBot.DatabaseManager}!GetTeamInfo@{GetTeamInfo}}
+\index{GetTeamInfo@{GetTeamInfo}!TelegramBot.DatabaseManager@{TelegramBot.DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{GetTeamInfo()}{GetTeamInfo()}}
+{\footnotesize\ttfamily async Task$<$ string $>$ Telegram\+Bot.\+Database\+Manager.\+Get\+Team\+Info (\begin{DoxyParamCaption}\item[{string}]{team\+Name }\end{DoxyParamCaption})}
+
+Получение информации о команде по ее названию 
+\begin{DoxyParams}{Аргументы}
+{\em team\+Name} & Название команды \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Информация о команде 
+\end{DoxyReturn}
+
+
+См. определение в файле \mbox{\hyperlink{_database_manager_8cs_source}{Database\+Manager.\+cs}} строка \mbox{\hyperlink{_database_manager_8cs_source_l00087}{87}}
+
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+Telegram\+Bot/\mbox{\hyperlink{_database_manager_8cs}{Database\+Manager.\+cs}}\end{DoxyCompactItemize}

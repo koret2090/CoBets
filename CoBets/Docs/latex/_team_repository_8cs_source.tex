@@ -1,0 +1,81 @@
+\hypertarget{_team_repository_8cs_source}{}\doxysection{Team\+Repository.\+cs}
+\label{_team_repository_8cs_source}\index{CoBetsDatabase/Repositories/Implementation/TeamRepository.cs@{CoBetsDatabase/Repositories/Implementation/TeamRepository.cs}}
+\mbox{\hyperlink{_team_repository_8cs}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00001}00001 \textcolor{keyword}{using} System;}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00002}00002 \textcolor{keyword}{using} System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00003}00003 \textcolor{keyword}{using} System.Linq;}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00004}00004 \textcolor{keyword}{using} System.Threading.Tasks;}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00005}00005 \textcolor{keyword}{using} \mbox{\hyperlink{namespace_co_bets_database}{CoBetsDatabase}}.\mbox{\hyperlink{namespace_co_bets_database_1_1_models}{Models}};}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00006}00006 \textcolor{keyword}{using} \mbox{\hyperlink{namespace_co_bets_database}{CoBetsDatabase}}.\mbox{\hyperlink{namespace_co_bets_database_1_1_repositories}{Repositories}}.\mbox{\hyperlink{namespace_co_bets_database_1_1_repositories_1_1_interfaces}{Interfaces}};}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00007}00007 \textcolor{keyword}{using} Microsoft.EntityFrameworkCore;}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00009}00009 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_co_bets_database_1_1_repositories_1_1_implementation}{CoBetsDatabase.Repositories.Implementation}}}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00010}00010 \{}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00016}\mbox{\hyperlink{class_co_bets_database_1_1_repositories_1_1_implementation_1_1_team_repository}{00016}}     \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_co_bets_database_1_1_repositories_1_1_implementation_1_1_team_repository}{TeamRepository}} : \mbox{\hyperlink{interface_co_bets_database_1_1_repositories_1_1_interfaces_1_1_i_team_repository}{ITeamRepository}}, IDisposable}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00017}00017     \{}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00021}00021         \textcolor{keyword}{private} readonly \mbox{\hyperlink{class_co_bets_database_1_1_co_bets_db_context}{CoBetsDbContext}} \_database;}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00022}00022         }
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00027}\mbox{\hyperlink{class_co_bets_database_1_1_repositories_1_1_implementation_1_1_team_repository_a88d4596fc1c497bc8ded82b2f3a82adb}{00027}}         \textcolor{keyword}{public} \mbox{\hyperlink{class_co_bets_database_1_1_repositories_1_1_implementation_1_1_team_repository_a88d4596fc1c497bc8ded82b2f3a82adb}{TeamRepository}}(\mbox{\hyperlink{class_co_bets_database_1_1_co_bets_db_context}{CoBetsDbContext}} database)}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00028}00028         \{}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00029}00029             \_database = database;}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00030}00030         \}}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00031}00031         }
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00038}\mbox{\hyperlink{class_co_bets_database_1_1_repositories_1_1_implementation_1_1_team_repository_a7c19457d3bc4aa5e97d519c1a736885f}{00038}}         \textcolor{keyword}{public} async Task<Team?> \mbox{\hyperlink{class_co_bets_database_1_1_repositories_1_1_implementation_1_1_team_repository_a7c19457d3bc4aa5e97d519c1a736885f}{Add}}(\mbox{\hyperlink{class_co_bets_database_1_1_models_1_1_team}{Team}} element)}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00039}00039         \{}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00040}00040             \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00041}00041             \{}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00042}00042                 var addedTeam = await \_database.Teams.AddAsync(element);}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00043}00043                 await \_database.SaveChangesAsync();}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00044}00044                 \textcolor{keywordflow}{return} addedTeam.Entity;}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00045}00045             \}}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00046}00046             \textcolor{keywordflow}{catch} (Exception e)}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00047}00047             \{}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00048}00048                 \textcolor{keywordflow}{return} \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00049}00049             \}}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00050}00050         \}}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00051}00051         }
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00056}\mbox{\hyperlink{class_co_bets_database_1_1_repositories_1_1_implementation_1_1_team_repository_afd3d7d27d01b5a90938e2eff7df1b6d1}{00056}}         \textcolor{keyword}{public} async Task<List<Team>> \mbox{\hyperlink{class_co_bets_database_1_1_repositories_1_1_implementation_1_1_team_repository_afd3d7d27d01b5a90938e2eff7df1b6d1}{GetAll}}()}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00057}00057         \{}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00058}00058             \textcolor{keywordflow}{return} await \_database.Teams.OrderBy(t => t.Id).ToListAsync();}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00059}00059         \}}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00060}00060         }
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00067}\mbox{\hyperlink{class_co_bets_database_1_1_repositories_1_1_implementation_1_1_team_repository_a62d0ecf6182260c204e98e9f40d6375a}{00067}}         \textcolor{keyword}{public} async Task<bool> \mbox{\hyperlink{class_co_bets_database_1_1_repositories_1_1_implementation_1_1_team_repository_a62d0ecf6182260c204e98e9f40d6375a}{Delete}}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id})}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00068}00068         \{}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00069}00069             \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00070}00070             \{}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00071}00071                 var team = await \_database.Teams.FirstOrDefaultAsync(t => t.Id == \textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00072}00072                 \textcolor{keywordflow}{if} (team != \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00073}00073                 \{}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00074}00074                     \_database.Teams.Remove(team);}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00075}00075                     await \_database.SaveChangesAsync();}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00076}00076                     \textcolor{keywordflow}{return} \textcolor{keyword}{true};        }
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00077}00077                 \}}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00079}00079                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00080}00080             \}}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00081}00081             \textcolor{keywordflow}{catch} (Exception e)}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00082}00082             \{}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00083}00083                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00084}00084             \}}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00085}00085         \}}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00086}00086         }
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00091}\mbox{\hyperlink{class_co_bets_database_1_1_repositories_1_1_implementation_1_1_team_repository_aadab8e966795333e4a782202b3db493a}{00091}}         \textcolor{keyword}{public} async Task<Team?> \mbox{\hyperlink{class_co_bets_database_1_1_repositories_1_1_implementation_1_1_team_repository_aadab8e966795333e4a782202b3db493a}{FindElementById}}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id})}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00092}00092         \{}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00093}00093             var team = await \_database.Teams.FindAsync(\textcolor{keywordtype}{id}); }
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00094}00094             \textcolor{keywordflow}{return} team;}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00095}00095         \}}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00096}00096         }
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00101}\mbox{\hyperlink{class_co_bets_database_1_1_repositories_1_1_implementation_1_1_team_repository_a808028a0c651edf373fcfeb590f91aeb}{00101}}         \textcolor{keyword}{public} async Task<Team?> \mbox{\hyperlink{class_co_bets_database_1_1_repositories_1_1_implementation_1_1_team_repository_a808028a0c651edf373fcfeb590f91aeb}{FindElementByName}}(\textcolor{keywordtype}{string} name)}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00102}00102         \{}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00103}00103             \textcolor{keywordflow}{return} await \_database.Teams.Where(team => team.Name == name).FirstOrDefaultAsync();}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00104}00104         \}}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00105}00105 }
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00106}\mbox{\hyperlink{class_co_bets_database_1_1_repositories_1_1_implementation_1_1_team_repository_ab632c781e6ae7db7bee47277ecddffd6}{00106}}         \textcolor{keyword}{public} async \textcolor{keywordtype}{void} \mbox{\hyperlink{class_co_bets_database_1_1_repositories_1_1_implementation_1_1_team_repository_ab632c781e6ae7db7bee47277ecddffd6}{Dispose}}()}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00107}00107         \{}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00108}00108             await \_database.DisposeAsync();}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00109}00109         \}}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00110}00110     \}}
+\DoxyCodeLine{\Hypertarget{_team_repository_8cs_source_l00111}00111 \}}
+
+\end{DoxyCode}

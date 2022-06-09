@@ -1,0 +1,35 @@
+\hypertarget{_co_bets_db_context_factory_8cs_source}{}\doxysection{Co\+Bets\+Db\+Context\+Factory.\+cs}
+\label{_co_bets_db_context_factory_8cs_source}\index{TelegramBot/ContextFactory/CoBetsDbContextFactory.cs@{TelegramBot/ContextFactory/CoBetsDbContextFactory.cs}}
+\mbox{\hyperlink{_co_bets_db_context_factory_8cs}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_co_bets_db_context_factory_8cs_source_l00001}00001 \textcolor{keyword}{using} System.IO;}
+\DoxyCodeLine{\Hypertarget{_co_bets_db_context_factory_8cs_source_l00002}00002 \textcolor{keyword}{using} \mbox{\hyperlink{namespace_co_bets_database}{CoBetsDatabase}};}
+\DoxyCodeLine{\Hypertarget{_co_bets_db_context_factory_8cs_source_l00003}00003 \textcolor{keyword}{using} Microsoft.EntityFrameworkCore;}
+\DoxyCodeLine{\Hypertarget{_co_bets_db_context_factory_8cs_source_l00004}00004 \textcolor{keyword}{using} Microsoft.EntityFrameworkCore.Design;}
+\DoxyCodeLine{\Hypertarget{_co_bets_db_context_factory_8cs_source_l00005}00005 \textcolor{keyword}{using} Microsoft.Extensions.Configuration;}
+\DoxyCodeLine{\Hypertarget{_co_bets_db_context_factory_8cs_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_co_bets_db_context_factory_8cs_source_l00007}\mbox{\hyperlink{namespace_telegram_bot_1_1_context_factory}{00007}} \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_telegram_bot_1_1_context_factory}{TelegramBot.ContextFactory}}}
+\DoxyCodeLine{\Hypertarget{_co_bets_db_context_factory_8cs_source_l00008}00008 \{}
+\DoxyCodeLine{\Hypertarget{_co_bets_db_context_factory_8cs_source_l00009}\mbox{\hyperlink{class_telegram_bot_1_1_context_factory_1_1_co_bets_db_context_factory}{00009}}     \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_telegram_bot_1_1_context_factory_1_1_co_bets_db_context_factory}{CoBetsDbContextFactory}} : IDesignTimeDbContextFactory<CoBetsDbContext>}
+\DoxyCodeLine{\Hypertarget{_co_bets_db_context_factory_8cs_source_l00010}00010     \{}
+\DoxyCodeLine{\Hypertarget{_co_bets_db_context_factory_8cs_source_l00011}00011         \textcolor{keyword}{private} \textcolor{keyword}{const} \textcolor{keywordtype}{string} AppSettings = \textcolor{stringliteral}{"{}appsettings.json"{}};}
+\DoxyCodeLine{\Hypertarget{_co_bets_db_context_factory_8cs_source_l00012}00012         \textcolor{keyword}{private} \textcolor{keyword}{const} \textcolor{keywordtype}{string} ConnectionStringsSection = \textcolor{stringliteral}{"{}DefaultConnection"{}};}
+\DoxyCodeLine{\Hypertarget{_co_bets_db_context_factory_8cs_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{_co_bets_db_context_factory_8cs_source_l00014}\mbox{\hyperlink{class_telegram_bot_1_1_context_factory_1_1_co_bets_db_context_factory_acb31b3335561ba2534bb9187fd9f5e1b}{00014}}         \textcolor{keyword}{public} \mbox{\hyperlink{class_co_bets_database_1_1_co_bets_db_context}{CoBetsDbContext}} \mbox{\hyperlink{class_telegram_bot_1_1_context_factory_1_1_co_bets_db_context_factory_acb31b3335561ba2534bb9187fd9f5e1b}{CreateDbContext}}(\textcolor{keywordtype}{string}[] args)}
+\DoxyCodeLine{\Hypertarget{_co_bets_db_context_factory_8cs_source_l00015}00015         \{}
+\DoxyCodeLine{\Hypertarget{_co_bets_db_context_factory_8cs_source_l00016}00016             var config = \textcolor{keyword}{new} ConfigurationBuilder()}
+\DoxyCodeLine{\Hypertarget{_co_bets_db_context_factory_8cs_source_l00017}00017                 .SetBasePath(Directory.GetCurrentDirectory())}
+\DoxyCodeLine{\Hypertarget{_co_bets_db_context_factory_8cs_source_l00018}00018                 .AddJsonFile(AppSettings)}
+\DoxyCodeLine{\Hypertarget{_co_bets_db_context_factory_8cs_source_l00019}00019                 .Build();}
+\DoxyCodeLine{\Hypertarget{_co_bets_db_context_factory_8cs_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{_co_bets_db_context_factory_8cs_source_l00021}00021             var connectionString = config.GetSection(ConnectionStringsSection).Value;}
+\DoxyCodeLine{\Hypertarget{_co_bets_db_context_factory_8cs_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{_co_bets_db_context_factory_8cs_source_l00023}00023             var builder = \textcolor{keyword}{new} DbContextOptionsBuilder<CoBetsDbContext>();}
+\DoxyCodeLine{\Hypertarget{_co_bets_db_context_factory_8cs_source_l00024}00024             builder.UseNpgsql(connectionString, optionsBuilder => optionsBuilder.MigrationsAssembly(\textcolor{stringliteral}{"{}TelegramBot"{}}));}
+\DoxyCodeLine{\Hypertarget{_co_bets_db_context_factory_8cs_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{_co_bets_db_context_factory_8cs_source_l00026}00026             \textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{class_co_bets_database_1_1_co_bets_db_context}{CoBetsDbContext}}(builder.Options);}
+\DoxyCodeLine{\Hypertarget{_co_bets_db_context_factory_8cs_source_l00027}00027         \}}
+\DoxyCodeLine{\Hypertarget{_co_bets_db_context_factory_8cs_source_l00028}00028     \}}
+\DoxyCodeLine{\Hypertarget{_co_bets_db_context_factory_8cs_source_l00029}00029 \}}
+
+\end{DoxyCode}

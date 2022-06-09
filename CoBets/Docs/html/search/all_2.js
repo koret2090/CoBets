@@ -1,0 +1,6 @@
+var searchData=
+[
+  ['add_0',['Add',['../class_co_bets_database_1_1_repositories_1_1_implementation_1_1_player_repository.html#a266d5fd642a53cc09fe244dabd19289b',1,'CoBetsDatabase.Repositories.Implementation.PlayerRepository.Add()'],['../class_co_bets_database_1_1_repositories_1_1_implementation_1_1_team_repository.html#a7c19457d3bc4aa5e97d519c1a736885f',1,'CoBetsDatabase.Repositories.Implementation.TeamRepository.Add()'],['../interface_co_bets_database_1_1_repositories_1_1_interfaces_1_1_i_crud_repository.html#a66d84f1494136294cd724aee47583466',1,'CoBetsDatabase.Repositories.Interfaces.ICrudRepository.Add()'],['../interface_controllers_1_1_i_base_controller.html#aabbf94a1407370b8348fe6824a95884f',1,'Controllers.IBaseController.Add()'],['../class_controllers_1_1_player_controller.html#ab187acafbff8134b06e464d46153a919',1,'Controllers.PlayerController.Add()'],['../class_controllers_1_1_team_controller.html#aaa28dbc2e8a3013a1ba2cda01cc05ac6',1,'Controllers.TeamController.Add()']]],
+  ['addplayers_1',['AddPlayers',['../class_telegram_bot_1_1_database_manager.html#ad7b8894a882e4e39a33499660fdfce51',1,'TelegramBot::DatabaseManager']]],
+  ['addteams_2',['AddTeams',['../class_telegram_bot_1_1_database_manager.html#a6a64e30237ff289a0e1cbf494e930dbb',1,'TelegramBot::DatabaseManager']]]
+];

@@ -1,0 +1,92 @@
+\hypertarget{parser_8py_source}{}\doxysection{parser.\+py}
+\label{parser_8py_source}\index{Parsers/TeamsParser/parser.py@{Parsers/TeamsParser/parser.py}}
+\mbox{\hyperlink{parser_8py}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00001}\mbox{\hyperlink{namespaceparser}{00001}} \textcolor{keyword}{from} email.policy \textcolor{keyword}{import} default}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00002}00002 \textcolor{keyword}{import} requests}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00003}00003 \textcolor{keyword}{from} bs4 \textcolor{keyword}{import} BeautifulSoup \textcolor{keyword}{as} BS}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00005}\mbox{\hyperlink{namespaceparser_acd9dad9b85b7849bd5bcd37bb851af64}{00005}} teams\_page\_start = 1}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00006}\mbox{\hyperlink{namespaceparser_a2feda69003041822600cf2b6c322327a}{00006}} teams\_page\_end = 978}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00008}\mbox{\hyperlink{namespaceparser_a9ec62170992a76fbc8231185cf6ccaed}{00008}} cite\_team = \textcolor{stringliteral}{"{}https://www.liveresult.ru/football/teams/p"{}}}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00009}\mbox{\hyperlink{namespaceparser_a565e314503dbb77c831ec84467b8d561}{00009}} cite\_players = \textcolor{stringliteral}{"{}https://www.liveresult.ru/football/teams/"{}}}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00011}\mbox{\hyperlink{namespaceparser_a651159e9623444140ecb4bd487683eeb}{00011}} filename\_players = \textcolor{stringliteral}{"{}players.csv"{}}}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00012}\mbox{\hyperlink{namespaceparser_a54970d580e057c2744c1cb81c8b57032}{00012}} filename\_teams = \textcolor{stringliteral}{"{}teams.csv"{}}}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00014}\mbox{\hyperlink{namespaceparser_a465c809005994a2d47376b56842bc367}{00014}} default\_num = 322}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00015}\mbox{\hyperlink{namespaceparser_abed3237f30b9e8d4bb516b4df6f7004a}{00015}} default\_pos = 9}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00017}\mbox{\hyperlink{namespaceparser_a54a84df137e67d7d08ef274a258947b0}{00017}} \textcolor{keyword}{def }\mbox{\hyperlink{namespaceparser_a54a84df137e67d7d08ef274a258947b0}{get\_teams\_info}}():}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00018}00018     titles = []}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00019}00019     \textcolor{keywordflow}{for} page\_num \textcolor{keywordflow}{in} range(teams\_page\_start, teams\_page\_end):}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00020}00020         \textcolor{keywordflow}{try}:}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00021}00021             print(page\_num)}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00022}00022             r = requests.get(cite\_team + str(page\_num))}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00023}00023             html = BS(r.content, \textcolor{stringliteral}{'html.parser'})}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00024}00024             teams = html.find\_all(\textcolor{stringliteral}{"{}h5"{}}, class\_=\textcolor{stringliteral}{"{}card-\/title"{}})}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00025}00025             \textcolor{keywordflow}{for} team \textcolor{keywordflow}{in} teams:}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00026}00026                 title = \mbox{\hyperlink{namespaceparser_ac4181546373d2754b80ae23c4b771faa}{get\_name}}(team.find(\textcolor{stringliteral}{"{}a"{}}))}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00027}00027                 titles.append(title)}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00028}00028         \textcolor{keywordflow}{except}:}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00029}00029             \textcolor{keywordflow}{continue}}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00031}00031     \textcolor{keywordflow}{return} titles}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00033}\mbox{\hyperlink{namespaceparser_ac4181546373d2754b80ae23c4b771faa}{00033}} \textcolor{keyword}{def }\mbox{\hyperlink{namespaceparser_ac4181546373d2754b80ae23c4b771faa}{get\_name}}(string):}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00034}00034     \textcolor{keywordflow}{return} string[\textcolor{stringliteral}{"{}href"{}}].split(\textcolor{stringliteral}{"{}/"{}})[3]}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00036}\mbox{\hyperlink{namespaceparser_a51fdb4015ae1a760dc3d0bd5ba81300e}{00036}} \textcolor{keyword}{def }\mbox{\hyperlink{namespaceparser_a51fdb4015ae1a760dc3d0bd5ba81300e}{write\_teams}}(teams):}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00037}00037     f = open(filename\_teams, \textcolor{stringliteral}{"{}w"{}})}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00039}00039     i = 0}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00040}00040     \textcolor{keywordflow}{for} team \textcolor{keywordflow}{in} teams:}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00041}00041         i += 1}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00042}00042         string = str(i) + \textcolor{stringliteral}{"{},"{}} + team + \textcolor{stringliteral}{'\(\backslash\)n'} }
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00043}00043         f.write(string)}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00045}00045     f.close()}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00047}\mbox{\hyperlink{namespaceparser_a619cc6d1bbe47e97da24f12e5a668339}{00047}} \textcolor{keyword}{def }\mbox{\hyperlink{namespaceparser_a619cc6d1bbe47e97da24f12e5a668339}{get\_teams\_members\_info\_in\_file}}(teams):}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00048}00048     f = open(filename\_players, \textcolor{stringliteral}{"{}w"{}})}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00049}00049     }
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00050}00050     i = 0}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00051}00051     j = 0}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00052}00052     \textcolor{keywordflow}{for} team \textcolor{keywordflow}{in} teams:}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00053}00053         print(team)}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00054}00054         \textcolor{keywordflow}{try}:}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00055}00055             i += 1}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00056}00056             r = requests.get(cite\_players + str(team))}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00057}00057             html = BS(r.content, \textcolor{stringliteral}{'html.parser'})}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00058}00058             players = html.find\_all(\textcolor{stringliteral}{"{}td"{}}, class\_=\textcolor{stringliteral}{"{}name left wrap"{}})}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00059}00059             numbers = html.find\_all(\textcolor{stringliteral}{"{}td"{}}, class\_=\textcolor{stringliteral}{"{}num right"{}})}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00060}00060             positions = html.find\_all(\textcolor{stringliteral}{"{}td"{}}, class\_=\textcolor{stringliteral}{"{}role"{}})}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00061}00061             }
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00062}00062             \textcolor{keywordflow}{for} index \textcolor{keywordflow}{in} range(len(players)):}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00063}00063                 j += 1}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00064}00064                 name = \mbox{\hyperlink{namespaceparser_ac4181546373d2754b80ae23c4b771faa}{get\_name}}(players[index].find(\textcolor{stringliteral}{"{}a"{}}))                }
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00065}00065                 number = numbers[index].find(\textcolor{stringliteral}{"{}span"{}}).text}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00066}00066                 pos = positions[index].find(\textcolor{stringliteral}{"{}span"{}}, class\_=\textcolor{stringliteral}{"{}hidden d-\/none"{}}).text}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00067}00067 }
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00068}00068                 \textcolor{comment}{\# при некорректном считывании присвоить такие значения}}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00069}00069                 \textcolor{keywordflow}{if} number == \textcolor{stringliteral}{"{}"{}}: number = default\_num}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00070}00070                 \textcolor{keywordflow}{if} pos == \textcolor{stringliteral}{"{}"{}}: pos = default\_pos}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00072}00072                 string = str(j) + \textcolor{stringliteral}{"{},"{}} + str(i) + \textcolor{stringliteral}{"{},"{}} + name + \textcolor{stringliteral}{"{},"{}} + str(number) + \textcolor{stringliteral}{"{},"{}} + str(pos) + \textcolor{stringliteral}{'\(\backslash\)n'}}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00073}00073                 f.write(string)}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00074}00074         \textcolor{keywordflow}{except}:}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00075}00075             \textcolor{keywordflow}{continue}}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00076}00076 }
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00077}00077     f.close() }
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00079}\mbox{\hyperlink{namespaceparser_a304715cbbb95022cbff25aed752d8847}{00079}} \textcolor{keyword}{def }\mbox{\hyperlink{namespaceparser_a304715cbbb95022cbff25aed752d8847}{main}}():}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00080}00080     teams = \mbox{\hyperlink{namespaceparser_a54a84df137e67d7d08ef274a258947b0}{get\_teams\_info}}()}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00081}00081     \mbox{\hyperlink{namespaceparser_a51fdb4015ae1a760dc3d0bd5ba81300e}{write\_teams}}(teams)}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00082}00082     \mbox{\hyperlink{namespaceparser_a619cc6d1bbe47e97da24f12e5a668339}{get\_teams\_members\_info\_in\_file}}(teams)}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00083}00083 }
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00084}00084 }
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00085}00085 \textcolor{keywordflow}{if} \_\_name\_\_ == \textcolor{stringliteral}{"{}\_\_main\_\_"{}}:}
+\DoxyCodeLine{\Hypertarget{parser_8py_source_l00086}00086     \mbox{\hyperlink{namespaceparser_a304715cbbb95022cbff25aed752d8847}{main}}()}
+
+\end{DoxyCode}

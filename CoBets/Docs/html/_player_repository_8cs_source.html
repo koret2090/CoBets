@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CoBets: Исходный файл CoBetsDatabase/Repositories/Implementation/PlayerRepository.cs</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">CoBets
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('_player_repository_8cs_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">PlayerRepository.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_player_repository_8cs.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using</span> System;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using</span> System.Collections.Generic;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using</span> System.Linq;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">using</span> System.Threading.Tasks;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">using</span> <a class="code hl_namespace" href="namespace_co_bets_database.html">CoBetsDatabase</a>.<a class="code hl_namespace" href="namespace_co_bets_database_1_1_models.html">Models</a>;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">using</span> <a class="code hl_namespace" href="namespace_co_bets_database.html">CoBetsDatabase</a>.<a class="code hl_namespace" href="namespace_co_bets_database_1_1_repositories.html">Repositories</a>.<a class="code hl_namespace" href="namespace_co_bets_database_1_1_repositories_1_1_interfaces.html">Interfaces</a>;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">using</span> Microsoft.EntityFrameworkCore;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="namespace_co_bets_database_1_1_repositories.html">    9</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_co_bets_database_1_1_repositories_1_1_implementation.html">CoBetsDatabase.Repositories.Implementation</a></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>{</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="class_co_bets_database_1_1_repositories_1_1_implementation_1_1_player_repository.html">   16</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="class_co_bets_database_1_1_repositories_1_1_implementation_1_1_player_repository.html">PlayerRepository</a> : <a class="code hl_interface" href="interface_co_bets_database_1_1_repositories_1_1_interfaces_1_1_i_player_repository.html">IPlayerRepository</a>, IDisposable</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keyword">private</span> readonly <a class="code hl_class" href="class_co_bets_database_1_1_co_bets_db_context.html">CoBetsDbContext</a> _database;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="class_co_bets_database_1_1_repositories_1_1_implementation_1_1_player_repository.html#a2ff33ec604d2bcd25d2c401e3e59a39e">   27</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="class_co_bets_database_1_1_repositories_1_1_implementation_1_1_player_repository.html#a2ff33ec604d2bcd25d2c401e3e59a39e">PlayerRepository</a>(<a class="code hl_class" href="class_co_bets_database_1_1_co_bets_db_context.html">CoBetsDbContext</a> database)</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            _database = database;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        }</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="class_co_bets_database_1_1_repositories_1_1_implementation_1_1_player_repository.html#a266d5fd642a53cc09fe244dabd19289b">   38</a></span>        <span class="keyword">public</span> async Task&lt;Player?&gt; <a class="code hl_function" href="class_co_bets_database_1_1_repositories_1_1_implementation_1_1_player_repository.html#a266d5fd642a53cc09fe244dabd19289b">Add</a>(<a class="code hl_class" href="class_co_bets_database_1_1_models_1_1_player.html">Player</a> element)</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            <span class="keywordflow">try</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                var addedPlayer = await _database.Players.AddAsync(element);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                await _database.SaveChangesAsync();</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                <span class="keywordflow">return</span> addedPlayer.Entity;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            }</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            <span class="keywordflow">catch</span> (Exception e)</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            }</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="class_co_bets_database_1_1_repositories_1_1_implementation_1_1_player_repository.html#a0543526ca073b97975dc8da09829fdef">   56</a></span>        <span class="keyword">public</span> async Task&lt;List&lt;Player&gt;&gt; <a class="code hl_function" href="class_co_bets_database_1_1_repositories_1_1_implementation_1_1_player_repository.html#a0543526ca073b97975dc8da09829fdef">GetAll</a>()</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            <span class="keywordflow">return</span> await _database.Players.OrderBy(p =&gt; p.Id).ToListAsync();</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        }</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="class_co_bets_database_1_1_repositories_1_1_implementation_1_1_player_repository.html#aca1e32b6b2f4fc164b40b5aafc936235">   67</a></span>        <span class="keyword">public</span> async Task&lt;bool&gt; <a class="code hl_function" href="class_co_bets_database_1_1_repositories_1_1_implementation_1_1_player_repository.html#aca1e32b6b2f4fc164b40b5aafc936235">Delete</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>)</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            <span class="keywordflow">try</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                var player = await _database.Players.FirstOrDefaultAsync(p =&gt; p.Id == <span class="keywordtype">id</span>);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                <span class="keywordflow">if</span> (player != <span class="keyword">null</span>)</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                {</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                    _database.Players.Remove(player);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                    await _database.SaveChangesAsync();</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                    <span class="keywordflow">return</span> <span class="keyword">true</span>;        </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                }</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            }</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            <span class="keywordflow">catch</span> (Exception e)</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            }</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        }</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="class_co_bets_database_1_1_repositories_1_1_implementation_1_1_player_repository.html#a02aa72262eb67595f206b0d1a7f27e4d">   91</a></span>        <span class="keyword">public</span> async Task&lt;Player?&gt; <a class="code hl_function" href="class_co_bets_database_1_1_repositories_1_1_implementation_1_1_player_repository.html#a02aa72262eb67595f206b0d1a7f27e4d">FindElementById</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>)</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            <span class="keywordflow">return</span> await _database.Players.FindAsync(<span class="keywordtype">id</span>); </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        }</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="class_co_bets_database_1_1_repositories_1_1_implementation_1_1_player_repository.html#ab8d886b843199be06bd821930889d470">  100</a></span>        <span class="keyword">public</span> async Task&lt;Player?&gt; <a class="code hl_function" href="class_co_bets_database_1_1_repositories_1_1_implementation_1_1_player_repository.html#ab8d886b843199be06bd821930889d470">FindElementByName</a>(<span class="keywordtype">string</span> name)</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        {</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            <span class="keywordflow">return</span> await _database.Players.Where(player =&gt; player.Name == name).FirstOrDefaultAsync();</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        }</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="class_co_bets_database_1_1_repositories_1_1_implementation_1_1_player_repository.html#a48c7b7661d91cebb66361a03405a9fb9">  109</a></span>        <span class="keyword">public</span> async Task&lt;List&lt;Player&gt;&gt; <a class="code hl_function" href="class_co_bets_database_1_1_repositories_1_1_implementation_1_1_player_repository.html#a48c7b7661d91cebb66361a03405a9fb9">GetPlayersByTeam</a>(<a class="code hl_class" href="class_co_bets_database_1_1_models_1_1_team.html">Team</a> team)</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        {</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>            <span class="keywordflow">return</span> await _database.Players.Where(needed =&gt; needed.Team.Name == team.<a class="code hl_property" href="class_co_bets_database_1_1_models_1_1_team.html#ab785c37c15bf6769a6cd1623a9c5a935">Name</a>).ToListAsync();</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        }</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="class_co_bets_database_1_1_repositories_1_1_implementation_1_1_player_repository.html#ae85b13add1e05a240e95864b2c0bc89f">  114</a></span>        <span class="keyword">public</span> async <span class="keywordtype">void</span> <a class="code hl_function" href="class_co_bets_database_1_1_repositories_1_1_implementation_1_1_player_repository.html#ae85b13add1e05a240e95864b2c0bc89f">Dispose</a>()</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        {</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>            await _database.DisposeAsync();</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        }</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    }</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>}</div>
+<div class="ttc" id="aclass_co_bets_database_1_1_co_bets_db_context_html"><div class="ttname"><a href="class_co_bets_database_1_1_co_bets_db_context.html">CoBetsDatabase.CoBetsDbContext</a></div><div class="ttdef"><b>Definition:</b> <a href="_co_bets_db_context_8cs_source.html#l00006">CoBetsDbContext.cs:7</a></div></div>
+<div class="ttc" id="aclass_co_bets_database_1_1_models_1_1_player_html"><div class="ttname"><a href="class_co_bets_database_1_1_models_1_1_player.html">CoBetsDatabase.Models.Player</a></div><div class="ttdoc">Класс Игрока</div><div class="ttdef"><b>Definition:</b> <a href="_player_8cs_source.html#l00010">Player.cs:11</a></div></div>
+<div class="ttc" id="aclass_co_bets_database_1_1_models_1_1_team_html"><div class="ttname"><a href="class_co_bets_database_1_1_models_1_1_team.html">CoBetsDatabase.Models.Team</a></div><div class="ttdoc">Класс Команды</div><div class="ttdef"><b>Definition:</b> <a href="_team_8cs_source.html#l00011">Team.cs:12</a></div></div>
+<div class="ttc" id="aclass_co_bets_database_1_1_models_1_1_team_html_ab785c37c15bf6769a6cd1623a9c5a935"><div class="ttname"><a href="class_co_bets_database_1_1_models_1_1_team.html#ab785c37c15bf6769a6cd1623a9c5a935">CoBetsDatabase.Models.Team.Name</a></div><div class="ttdeci">string Name</div><div class="ttdef"><b>Definition:</b> <a href="_team_8cs_source.html#l00015">Team.cs:15</a></div></div>
+<div class="ttc" id="aclass_co_bets_database_1_1_repositories_1_1_implementation_1_1_player_repository_html"><div class="ttname"><a href="class_co_bets_database_1_1_repositories_1_1_implementation_1_1_player_repository.html">CoBetsDatabase.Repositories.Implementation.PlayerRepository</a></div><div class="ttdoc">Класс-репозиторий для игроков</div><div class="ttdef"><b>Definition:</b> <a href="_player_repository_8cs_source.html#l00016">PlayerRepository.cs:17</a></div></div>
+<div class="ttc" id="aclass_co_bets_database_1_1_repositories_1_1_implementation_1_1_player_repository_html_a02aa72262eb67595f206b0d1a7f27e4d"><div class="ttname"><a href="class_co_bets_database_1_1_repositories_1_1_implementation_1_1_player_repository.html#a02aa72262eb67595f206b0d1a7f27e4d">CoBetsDatabase.Repositories.Implementation.PlayerRepository.FindElementById</a></div><div class="ttdeci">async Task&lt; Player?&gt; FindElementById(int id)</div><div class="ttdef"><b>Definition:</b> <a href="_player_repository_8cs_source.html#l00091">PlayerRepository.cs:91</a></div></div>
+<div class="ttc" id="aclass_co_bets_database_1_1_repositories_1_1_implementation_1_1_player_repository_html_a0543526ca073b97975dc8da09829fdef"><div class="ttname"><a href="class_co_bets_database_1_1_repositories_1_1_implementation_1_1_player_repository.html#a0543526ca073b97975dc8da09829fdef">CoBetsDatabase.Repositories.Implementation.PlayerRepository.GetAll</a></div><div class="ttdeci">async Task&lt; List&lt; Player &gt; &gt; GetAll()</div><div class="ttdef"><b>Definition:</b> <a href="_player_repository_8cs_source.html#l00056">PlayerRepository.cs:56</a></div></div>
+<div class="ttc" id="aclass_co_bets_database_1_1_repositories_1_1_implementation_1_1_player_repository_html_a266d5fd642a53cc09fe244dabd19289b"><div class="ttname"><a href="class_co_bets_database_1_1_repositories_1_1_implementation_1_1_player_repository.html#a266d5fd642a53cc09fe244dabd19289b">CoBetsDatabase.Repositories.Implementation.PlayerRepository.Add</a></div><div class="ttdeci">async Task&lt; Player?&gt; Add(Player element)</div><div class="ttdef"><b>Definition:</b> <a href="_player_repository_8cs_source.html#l00038">PlayerRepository.cs:38</a></div></div>
+<div class="ttc" id="aclass_co_bets_database_1_1_repositories_1_1_implementation_1_1_player_repository_html_a2ff33ec604d2bcd25d2c401e3e59a39e"><div class="ttname"><a href="class_co_bets_database_1_1_repositories_1_1_implementation_1_1_player_repository.html#a2ff33ec604d2bcd25d2c401e3e59a39e">CoBetsDatabase.Repositories.Implementation.PlayerRepository.PlayerRepository</a></div><div class="ttdeci">PlayerRepository(CoBetsDbContext database)</div><div class="ttdef"><b>Definition:</b> <a href="_player_repository_8cs_source.html#l00027">PlayerRepository.cs:27</a></div></div>
+<div class="ttc" id="aclass_co_bets_database_1_1_repositories_1_1_implementation_1_1_player_repository_html_a48c7b7661d91cebb66361a03405a9fb9"><div class="ttname"><a href="class_co_bets_database_1_1_repositories_1_1_implementation_1_1_player_repository.html#a48c7b7661d91cebb66361a03405a9fb9">CoBetsDatabase.Repositories.Implementation.PlayerRepository.GetPlayersByTeam</a></div><div class="ttdeci">async Task&lt; List&lt; Player &gt; &gt; GetPlayersByTeam(Team team)</div><div class="ttdef"><b>Definition:</b> <a href="_player_repository_8cs_source.html#l00109">PlayerRepository.cs:109</a></div></div>
+<div class="ttc" id="aclass_co_bets_database_1_1_repositories_1_1_implementation_1_1_player_repository_html_ab8d886b843199be06bd821930889d470"><div class="ttname"><a href="class_co_bets_database_1_1_repositories_1_1_implementation_1_1_player_repository.html#ab8d886b843199be06bd821930889d470">CoBetsDatabase.Repositories.Implementation.PlayerRepository.FindElementByName</a></div><div class="ttdeci">async Task&lt; Player?&gt; FindElementByName(string name)</div><div class="ttdef"><b>Definition:</b> <a href="_player_repository_8cs_source.html#l00100">PlayerRepository.cs:100</a></div></div>
+<div class="ttc" id="aclass_co_bets_database_1_1_repositories_1_1_implementation_1_1_player_repository_html_aca1e32b6b2f4fc164b40b5aafc936235"><div class="ttname"><a href="class_co_bets_database_1_1_repositories_1_1_implementation_1_1_player_repository.html#aca1e32b6b2f4fc164b40b5aafc936235">CoBetsDatabase.Repositories.Implementation.PlayerRepository.Delete</a></div><div class="ttdeci">async Task&lt; bool &gt; Delete(int id)</div><div class="ttdef"><b>Definition:</b> <a href="_player_repository_8cs_source.html#l00067">PlayerRepository.cs:67</a></div></div>
+<div class="ttc" id="aclass_co_bets_database_1_1_repositories_1_1_implementation_1_1_player_repository_html_ae85b13add1e05a240e95864b2c0bc89f"><div class="ttname"><a href="class_co_bets_database_1_1_repositories_1_1_implementation_1_1_player_repository.html#ae85b13add1e05a240e95864b2c0bc89f">CoBetsDatabase.Repositories.Implementation.PlayerRepository.Dispose</a></div><div class="ttdeci">async void Dispose()</div><div class="ttdef"><b>Definition:</b> <a href="_player_repository_8cs_source.html#l00114">PlayerRepository.cs:114</a></div></div>
+<div class="ttc" id="ainterface_co_bets_database_1_1_repositories_1_1_interfaces_1_1_i_player_repository_html"><div class="ttname"><a href="interface_co_bets_database_1_1_repositories_1_1_interfaces_1_1_i_player_repository.html">CoBetsDatabase.Repositories.Interfaces.IPlayerRepository</a></div><div class="ttdoc">Интерфейс репозитория игроков</div><div class="ttdef"><b>Definition:</b> <a href="_i_player_repository_8cs_source.html#l00010">IPlayerRepository.cs:11</a></div></div>
+<div class="ttc" id="anamespace_co_bets_database_1_1_models_html"><div class="ttname"><a href="namespace_co_bets_database_1_1_models.html">CoBetsDatabase.Models</a></div><div class="ttdef"><b>Definition:</b> <a href="_player_8cs_source.html#l00003">Player.cs:4</a></div></div>
+<div class="ttc" id="anamespace_co_bets_database_1_1_repositories_1_1_implementation_html"><div class="ttname"><a href="namespace_co_bets_database_1_1_repositories_1_1_implementation.html">CoBetsDatabase.Repositories.Implementation</a></div><div class="ttdef"><b>Definition:</b> <a href="_player_repository_8cs_source.html#l00009">PlayerRepository.cs:10</a></div></div>
+<div class="ttc" id="anamespace_co_bets_database_1_1_repositories_1_1_interfaces_html"><div class="ttname"><a href="namespace_co_bets_database_1_1_repositories_1_1_interfaces.html">CoBetsDatabase.Repositories.Interfaces</a></div><div class="ttdef"><b>Definition:</b> <a href="_i_crud_repository_8cs_source.html#l00004">ICrudRepository.cs:5</a></div></div>
+<div class="ttc" id="anamespace_co_bets_database_1_1_repositories_html"><div class="ttname"><a href="namespace_co_bets_database_1_1_repositories.html">CoBetsDatabase.Repositories</a></div><div class="ttdef"><b>Definition:</b> <a href="_player_repository_8cs_source.html#l00009">PlayerRepository.cs:10</a></div></div>
+<div class="ttc" id="anamespace_co_bets_database_html"><div class="ttname"><a href="namespace_co_bets_database.html">CoBetsDatabase</a></div><div class="ttdef"><b>Definition:</b> <a href="_co_bets_db_context_8cs_source.html#l00004">CoBetsDbContext.cs:5</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_336fca52486af730acee74bb4ffa8897.html">CoBetsDatabase</a></li><li class="navelem"><a class="el" href="dir_93e2b1ed4d87c54178339a267d6c85c9.html">Repositories</a></li><li class="navelem"><a class="el" href="dir_8773b34725e4fd362bb3882cf6719c6c.html">Implementation</a></li><li class="navelem"><a class="el" href="_player_repository_8cs.html">PlayerRepository.cs</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+  </ul>
+</div>
+</body>
+</html>
